@@ -1,36 +1,128 @@
-node index.js 
-node index.js 
-node index.js 
-node index.js 
-node index.js 
-node index.js 
-node index.js 
-node index.js 
-node index.js 
-node index.js 
-node index.js 
-node index.js 
-node index.js 
-node index.js 
-node index.js 
-node index.js 
-node index.js 
-cd /Users/iv/zulily/pusher_lib
+node index.js init
+cat ~/.dotdex.json 
+node index.js init
+node index.js init
+cat ~/.dotdex.json 
+node index.js list
+node index.js list
+rm ~/.dotdex.json
+node index.js list
+node index.js list
+node index.js init
+node index.js list
+node index.js list
+node index.js update emacs "~/.emacs"
+node index.js list
+node index.js update emacs "~/.emacs"
+node index.js update emacs "~/.emacs"
+node index.js update emacs "~/.emacs"
+node index.js update emacs "~/.emacs"
+node index.js list
+node index.js update repo "git@github.com:ivy4vera/dot.git"
+node index.js list
+node index.js update zsh "~/.zshrc"
+node index.js list
+node index.js drop zsh
+node index.js list
+node index.js update zsh "~/.zshrc"
+node index.js list
+node index.js drop zsh
+node index.js list
+node index.js update zsh "~/.zshrc"
+node index.js update zsh "~/.zshrc"
+node index.js update zshprompt "~/.zsh_prompt"
+node index.js update aliases "~/.aliases"
+node index.js update emacs.d "~/.emacs.d"
+node index.js list
+node index.js push
+node index.js push
+node index.js push
+node index.js push
+node index.js push
+node index.js push
+node index.js push
+node index.js push
+ls /tmp/dotdex
+ls /tmp/dotdex/emacs.d/
+npm i -S ncp
+rm -rf /tmp/dotdex
+node index.js push
+ls /tmp/dotdex/emacs.d/
+ls /tmp/dotdex/
+ls /tmp/
+node index.js push
+ls /tmp/dotdex/
+node index.js push
+ls /tmp/dotdex/
+node index.js list
+node index.js push
+node index.js push
+node index.js push
+ls -la /tmp/dotdex
+node index.js push
+node index.js push
+ls -la /tmp/dotdex
+npm i -S ncp
+node index.js push
+node index.js push
+node index.js push
+ls -la /tmp/dotdex
+node index.js push
+node index.js push
+node index.js push
+node index.js push
+node index.js push
+node index.js push
+ls -la /tmp/dotdex
+ls -la /tmp/dotdex/emacs.d/
+node index.js list
+node index.js update emacs "~/.emacs"
+node index.js list
+node index.js update emacs ~/.emacs
+node index.js list
+node index.js list
+node index.js update emacs ~/.emacs
+node index.js update emacs "~/.emacs"
+node index.js update emacs "\~/.emacs"
+node index.js list
+node index.js update emacs "~/.emacs"
+node index.js list
+node index.js update zshprompt "~/.zsh_prompt"
+node index.js update zsh "~/.zshrc"
+node index.js update aliases "~/.aliases"
+node index.js update emacs "~/.emacs"
+node index.js update emacs.d "~/.emacs.d"
+node index.js list
+node index.js push
+node index.js push
+node index.js push
+node index.js push
+node index.js push
+cd /tmp/dotdex/
 git status
-exit
-node index.js 
-node index.js 
-node index.js 
-node index.js 
-node index.js 
-node index.js 
-node index.js 
-node index.js 
-node index.js 
-node index.js 
-node index.js 
-node index.js 
-node index.js 
-clear
-zsh
+cd ~/projects/dotdex/index.js
+cd ~/projects/dotdex/
+node index.js push
+rm -rf /tmp/dotdex/
+node index.js push
+cd /tmp/dotdex/
+git status
+cd ~/projects/dotdex/
+rm -rf /tmp/dotdex/
+node index.js push
+rm -rf /tmp/dotdex/
+npm i -S rimraf
+ls /tmp/dotdex
+ls /tmp/
+node index.js list
+node index.js push
+ls /tmp/dotdex
+rm -rf /tmp/dotdex/
+node index.js push
+node index.js push
+node index.js push
+node index.js push
+node index.js push
+node index.js push
+    at push (/Users/iv/projects/dotdeexitx/lib/dotdex.js:58:10)
 exit

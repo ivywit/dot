@@ -1,0 +1,3262 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "65ad5b93ab981ced237cc3ea74fb45ce",
+    "packages": [
+        {
+            "name": "composer/ca-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/ca-bundle.git",
+                "reference": "558f321c52faeb4828c03e7dc0cfe39a09e09a2d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/558f321c52faeb4828c03e7dc0cfe39a09e09a2d",
+                "reference": "558f321c52faeb4828c03e7dc0cfe39a09e09a2d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-openssl": "*",
+                "ext-pcre": "*",
+                "php": "^5.3.2 || ^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.5",
+                "psr/log": "^1.0",
+                "symfony/process": "^2.5 || ^3.0 || ^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\CaBundle\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                }
+            ],
+            "description": "Lets you find a path to the system CA bundle, and includes a fallback to the Mozilla CA bundle.",
+            "keywords": [
+                "cabundle",
+                "cacert",
+                "certificate",
+                "ssl",
+                "tls"
+            ],
+            "time": "2019-01-28T09:30:10+00:00"
+        },
+        {
+            "name": "composer/composer",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/composer.git",
+                "reference": "522ea033a3c6e72d72954f7cd019a3b75e28f391"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/composer/zipball/522ea033a3c6e72d72954f7cd019a3b75e28f391",
+                "reference": "522ea033a3c6e72d72954f7cd019a3b75e28f391",
+                "shasum": ""
+            },
+            "require": {
+                "composer/ca-bundle": "^1.0",
+                "composer/semver": "^1.0",
+                "composer/spdx-licenses": "^1.2",
+                "composer/xdebug-handler": "^1.1",
+                "justinrainbow/json-schema": "^3.0 || ^4.0 || ^5.0",
+                "php": "^5.3.2 || ^7.0",
+                "psr/log": "^1.0",
+                "seld/jsonlint": "^1.4",
+                "seld/phar-utils": "^1.0",
+                "symfony/console": "^2.7 || ^3.0 || ^4.0",
+                "symfony/filesystem": "^2.7 || ^3.0 || ^4.0",
+                "symfony/finder": "^2.7 || ^3.0 || ^4.0",
+                "symfony/process": "^2.7 || ^3.0 || ^4.0"
+            },
+            "conflict": {
+                "symfony/console": "2.8.38"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35 || ^5.7",
+                "phpunit/phpunit-mock-objects": "^2.3 || ^3.0"
+            },
+            "suggest": {
+                "ext-openssl": "Enabling the openssl extension allows you to access https URLs for repositories and packages",
+                "ext-zip": "Enabling the zip extension allows you to unzip archives",
+                "ext-zlib": "Allow gzip compression of HTTP requests"
+            },
+            "bin": [
+                "bin/composer"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.9-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\": "src/Composer"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nils Adermann",
+                    "email": "naderman@naderman.de",
+                    "homepage": "http://www.naderman.de"
+                },
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                }
+            ],
+            "description": "Composer helps you declare, manage and install dependencies of PHP projects, ensuring you have the right stack everywhere.",
+            "homepage": "https://getcomposer.org/",
+            "keywords": [
+                "autoload",
+                "dependency",
+                "package"
+            ],
+            "time": "2019-03-04T16:26:35+00:00"
+        },
+        {
+            "name": "composer/semver",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/semver.git",
+                "reference": "e97856ee51b93ba42666de1f1d481d142ec62220"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/semver/zipball/e97856ee51b93ba42666de1f1d481d142ec62220",
+                "reference": "e97856ee51b93ba42666de1f1d481d142ec62220",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.2 || ^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.5 || ^5.0.5",
+                "phpunit/phpunit-mock-objects": "2.3.0 || ^3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\Semver\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nils Adermann",
+                    "email": "naderman@naderman.de",
+                    "homepage": "http://www.naderman.de"
+                },
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                },
+                {
+                    "name": "Rob Bast",
+                    "email": "rob.bast@gmail.com",
+                    "homepage": "http://robbast.nl"
+                }
+            ],
+            "description": "Semver library that offers utilities, version constraint parsing and validation.",
+            "keywords": [
+                "semantic",
+                "semver",
+                "validation",
+                "versioning"
+            ],
+            "time": "2019-01-30T14:33:02+00:00"
+        },
+        {
+            "name": "composer/spdx-licenses",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/spdx-licenses.git",
+                "reference": "5781a46078ca46330d05f46f90c42eaacba85749"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/spdx-licenses/zipball/5781a46078ca46330d05f46f90c42eaacba85749",
+                "reference": "5781a46078ca46330d05f46f90c42eaacba85749",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.2 || ^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.5",
+                "phpunit/phpunit-mock-objects": "2.3.0 || ^3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\Spdx\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nils Adermann",
+                    "email": "naderman@naderman.de",
+                    "homepage": "http://www.naderman.de"
+                },
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                },
+                {
+                    "name": "Rob Bast",
+                    "email": "rob.bast@gmail.com",
+                    "homepage": "http://robbast.nl"
+                }
+            ],
+            "description": "SPDX licenses list and validation library.",
+            "keywords": [
+                "license",
+                "spdx",
+                "validator"
+            ],
+            "time": "2018-12-26T21:53:59+00:00"
+        },
+        {
+            "name": "composer/xdebug-handler",
+            "version": "1.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/xdebug-handler.git",
+                "reference": "d17708133b6c276d6e42ef887a877866b909d892"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/xdebug-handler/zipball/d17708133b6c276d6e42ef887a877866b909d892",
+                "reference": "d17708133b6c276d6e42ef887a877866b909d892",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.2 || ^7.0",
+                "psr/log": "^1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Composer\\XdebugHandler\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "John Stevenson",
+                    "email": "john-stevenson@blueyonder.co.uk"
+                }
+            ],
+            "description": "Restarts a process without xdebug.",
+            "keywords": [
+                "Xdebug",
+                "performance"
+            ],
+            "time": "2019-01-28T20:25:53+00:00"
+        },
+        {
+            "name": "dnoegel/php-xdg-base-dir",
+            "version": "0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dnoegel/php-xdg-base-dir.git",
+                "reference": "265b8593498b997dc2d31e75b89f053b5cc9621a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dnoegel/php-xdg-base-dir/zipball/265b8593498b997dc2d31e75b89f053b5cc9621a",
+                "reference": "265b8593498b997dc2d31e75b89f053b5cc9621a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "@stable"
+            },
+            "type": "project",
+            "autoload": {
+                "psr-4": {
+                    "XdgBaseDir\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "implementation of xdg base directory specification for php",
+            "time": "2014-10-24T07:27:01+00:00"
+        },
+        {
+            "name": "jetbrains/phpstorm-stubs",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JetBrains/phpstorm-stubs.git",
+                "reference": "9e6540f9200bb3e9b1d091ab7bde1b735aa27427"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JetBrains/phpstorm-stubs/zipball/9e6540f9200bb3e9b1d091ab7bde1b735aa27427",
+                "reference": "9e6540f9200bb3e9b1d091ab7bde1b735aa27427",
+                "shasum": ""
+            },
+            "require-dev": {
+                "nikic/php-parser": "v4.0.1",
+                "php": "^7.1",
+                "phpdocumentor/reflection-docblock": "^4.3",
+                "phpunit/phpunit": "7.1.4"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "PHP runtime & extensions header files for PhpStorm",
+            "homepage": "https://www.jetbrains.com/phpstorm",
+            "keywords": [
+                "autocomplete",
+                "code",
+                "inference",
+                "inspection",
+                "jetbrains",
+                "phpstorm",
+                "stubs",
+                "type"
+            ],
+            "time": "2019-02-28T12:27:25+00:00"
+        },
+        {
+            "name": "justinrainbow/json-schema",
+            "version": "5.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/justinrainbow/json-schema.git",
+                "reference": "dcb6e1006bb5fd1e392b4daa68932880f37550d4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/dcb6e1006bb5fd1e392b4daa68932880f37550d4",
+                "reference": "dcb6e1006bb5fd1e392b4daa68932880f37550d4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "~2.2.20",
+                "json-schema/json-schema-test-suite": "1.2.0",
+                "phpunit/phpunit": "^4.8.35"
+            },
+            "bin": [
+                "bin/validate-json"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JsonSchema\\": "src/JsonSchema/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bruno Prieto Reis",
+                    "email": "bruno.p.reis@gmail.com"
+                },
+                {
+                    "name": "Justin Rainbow",
+                    "email": "justin.rainbow@gmail.com"
+                },
+                {
+                    "name": "Igor Wiedler",
+                    "email": "igor@wiedler.ch"
+                },
+                {
+                    "name": "Robert Schönthal",
+                    "email": "seroscho@googlemail.com"
+                }
+            ],
+            "description": "A library to validate a json schema.",
+            "homepage": "https://github.com/justinrainbow/json-schema",
+            "keywords": [
+                "json",
+                "schema"
+            ],
+            "time": "2019-01-14T23:55:14+00:00"
+        },
+        {
+            "name": "microsoft/tolerant-php-parser",
+            "version": "v0.0.17",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Microsoft/tolerant-php-parser.git",
+                "reference": "89386de8dec9c004c8ea832692e236c92f34b542"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Microsoft/tolerant-php-parser/zipball/89386de8dec9c004c8ea832692e236c92f34b542",
+                "reference": "89386de8dec9c004c8ea832692e236c92f34b542",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Microsoft\\PhpParser\\": [
+                        "src/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rob Lourens",
+                    "email": "roblou@microsoft.com"
+                }
+            ],
+            "description": "Tolerant PHP-to-AST parser designed for IDE usage scenarios",
+            "time": "2019-03-09T19:24:59+00:00"
+        },
+        {
+            "name": "monolog/monolog",
+            "version": "1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Seldaek/monolog.git",
+                "reference": "4d5b7e6ba1127789c7ff59d6f762298eaa29787f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/4d5b7e6ba1127789c7ff59d6f762298eaa29787f",
+                "reference": "4d5b7e6ba1127789c7ff59d6f762298eaa29787f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "psr/log": "~1.0"
+            },
+            "provide": {
+                "psr/log-implementation": "1.0.0"
+            },
+            "require-dev": {
+                "aws/aws-sdk-php": "^2.4.9 || ^3.0",
+                "doctrine/couchdb": "~1.0@dev",
+                "graylog2/gelf-php": "~1.0",
+                "jakub-onderka/php-parallel-lint": "0.9",
+                "php-amqplib/php-amqplib": "~2.4",
+                "php-console/php-console": "^3.1.3",
+                "phpunit/phpunit": "~4.5",
+                "phpunit/phpunit-mock-objects": "2.3.0",
+                "ruflin/elastica": ">=0.90 <3.0",
+                "sentry/sentry": "^0.13",
+                "swiftmailer/swiftmailer": "^5.3|^6.0"
+            },
+            "suggest": {
+                "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
+                "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
+                "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
+                "ext-mongo": "Allow sending log messages to a MongoDB server",
+                "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
+                "mongodb/mongodb": "Allow sending log messages to a MongoDB server via PHP Driver",
+                "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
+                "php-console/php-console": "Allow sending log messages to Google Chrome",
+                "rollbar/rollbar": "Allow sending log messages to Rollbar",
+                "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
+                "sentry/sentry": "Allow sending log messages to a Sentry server"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Monolog\\": "src/Monolog"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                }
+            ],
+            "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
+            "homepage": "http://github.com/Seldaek/monolog",
+            "keywords": [
+                "log",
+                "logging",
+                "psr-3"
+            ],
+            "time": "2018-12-26T14:24:03+00:00"
+        },
+        {
+            "name": "ocramius/package-versions",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Ocramius/PackageVersions.git",
+                "reference": "a4d4b60d0e60da2487bd21a2c6ac089f85570dbb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Ocramius/PackageVersions/zipball/a4d4b60d0e60da2487bd21a2c6ac089f85570dbb",
+                "reference": "a4d4b60d0e60da2487bd21a2c6ac089f85570dbb",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0.0",
+                "php": "^7.1.0"
+            },
+            "require-dev": {
+                "composer/composer": "^1.6.3",
+                "doctrine/coding-standard": "^5.0.1",
+                "ext-zip": "*",
+                "infection/infection": "^0.7.1",
+                "phpunit/phpunit": "^7.0.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "PackageVersions\\Installer",
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PackageVersions\\": "src/PackageVersions"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Pivetta",
+                    "email": "ocramius@gmail.com"
+                }
+            ],
+            "description": "Composer plugin that provides efficient querying for installed package versions (no runtime IO)",
+            "time": "2019-02-21T12:16:21+00:00"
+        },
+        {
+            "name": "phpactor/class-mover",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/class-mover.git",
+                "reference": "8c87bd29d2b4ddbf3239dbabe6d42883d1e61fff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/class-mover/zipball/8c87bd29d2b4ddbf3239dbabe6d42883d1e61fff",
+                "reference": "8c87bd29d2b4ddbf3239dbabe6d42883d1e61fff",
+                "shasum": ""
+            },
+            "require": {
+                "microsoft/tolerant-php-parser": "@dev",
+                "php": "^7.1",
+                "psr/log": "^1.0@dev",
+                "symfony/filesystem": "^2.7|^3.0"
+            },
+            "require-dev": {
+                "phpactor/worse-reflection": "~0.1",
+                "phpstan/phpstan": "^0.8.1",
+                "phpunit/phpunit": "^6.2",
+                "symfony/console": "^3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\ClassMover\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Library for moving classes",
+            "time": "2019-01-06T11:48:33+00:00"
+        },
+        {
+            "name": "phpactor/class-to-file",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/class-to-file.git",
+                "reference": "524af90cef3ba6e30f07994ea8c0a89ab48b39e4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/class-to-file/zipball/524af90cef3ba6e30f07994ea8c0a89ab48b39e4",
+                "reference": "524af90cef3ba6e30f07994ea8c0a89ab48b39e4",
+                "shasum": ""
+            },
+            "require": {
+                "psr/log": "^1.0",
+                "webmozart/path-util": "^2.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.1",
+                "symfony/filesystem": "^3.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\ClassFileConverter\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Library to covert class names to file paths and vice-versa",
+            "time": "2019-01-17T07:26:00+00:00"
+        },
+        {
+            "name": "phpactor/class-to-file-extension",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/class-to-file-extension.git",
+                "reference": "5f16157f5258c25cccd6de64ddcadc4c43e543dd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/class-to-file-extension/zipball/5f16157f5258c25cccd6de64ddcadc4c43e543dd",
+                "reference": "5f16157f5258c25cccd6de64ddcadc4c43e543dd",
+                "shasum": ""
+            },
+            "require": {
+                "phpactor/class-to-file": "~0.1",
+                "phpactor/composer-autoloader-extension": "~0.1",
+                "phpactor/container": "^1.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.13",
+                "phpstan/phpstan": "^0.10.5",
+                "phpunit/phpunit": "^7.4"
+            },
+            "type": "phpactor-extension",
+            "extra": {
+                "phpactor.extension_class": "Phpactor\\Extension\\ClassToFile\\ClassToFileExtension",
+                "branch-alias": {
+                    "dev-master": "0.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\Extension\\ClassToFile\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Converts classes to files and vice-versa",
+            "time": "2019-03-03T11:42:23+00:00"
+        },
+        {
+            "name": "phpactor/code-builder",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/code-builder.git",
+                "reference": "1859c4fa8b673565c1f9bf3028dc06221f35a9a8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/code-builder/zipball/1859c4fa8b673565c1f9bf3028dc06221f35a9a8",
+                "reference": "1859c4fa8b673565c1f9bf3028dc06221f35a9a8",
+                "shasum": ""
+            },
+            "require": {
+                "microsoft/tolerant-php-parser": "~0.0.1",
+                "phpactor/text-document": "^1.0",
+                "phpactor/worse-reflection": "~0.2",
+                "twig/twig": "^2.4"
+            },
+            "require-dev": {
+                "phpactor/test-utils": "^1.0",
+                "phpunit/phpunit": "^6.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\CodeBuilder\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Generating and modifying source code",
+            "time": "2019-03-03T12:16:50+00:00"
+        },
+        {
+            "name": "phpactor/code-transform",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/code-transform.git",
+                "reference": "c75b56e12cbc56a9d0cd0b8c172a8dd6020e78ad"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/code-transform/zipball/c75b56e12cbc56a9d0cd0b8c172a8dd6020e78ad",
+                "reference": "c75b56e12cbc56a9d0cd0b8c172a8dd6020e78ad",
+                "shasum": ""
+            },
+            "require": {
+                "phpactor/class-to-file": "~0.3",
+                "phpactor/code-builder": "~0.2",
+                "webmozart/path-util": "~2.3"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.13",
+                "phpactor/test-utils": "^1.0@dev",
+                "phpactor/worse-reflection": "~0.1",
+                "phpstan/phpstan": "^0.10.3",
+                "phpunit/phpunit": "^7.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\CodeTransform\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Applies introspective transformations on source code",
+            "time": "2019-02-03T19:02:29+00:00"
+        },
+        {
+            "name": "phpactor/code-transform-extension",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/code-transform-extension.git",
+                "reference": "22396c1067ce22e7eb6be92e868df27df820140a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/code-transform-extension/zipball/22396c1067ce22e7eb6be92e868df27df820140a",
+                "reference": "22396c1067ce22e7eb6be92e868df27df820140a",
+                "shasum": ""
+            },
+            "require": {
+                "phpactor/class-to-file-extension": "~0.1",
+                "phpactor/code-transform": "~0.1",
+                "phpactor/container": "^1.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.13",
+                "phpactor/rpc-extension": "^0.1.0@dev",
+                "phpactor/test-utils": "^1.0@dev",
+                "phpstan/phpstan": "^0.10.5",
+                "phpunit/phpunit": "^7.4"
+            },
+            "type": "phpactor-extension",
+            "extra": {
+                "phpactor.extension_class": "Phpactor\\Extension\\CodeTransform\\CodeTransformExtension",
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\Extension\\CodeTransform\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Code transform base package",
+            "time": "2019-01-27T10:33:16+00:00"
+        },
+        {
+            "name": "phpactor/completion",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/completion.git",
+                "reference": "24231f92deae02f83a0f163d08cb78885f02e82b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/completion/zipball/24231f92deae02f83a0f163d08cb78885f02e82b",
+                "reference": "24231f92deae02f83a0f163d08cb78885f02e82b",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1",
+                "phpactor/class-to-file": "dev-master",
+                "phpactor/source-code-filesystem": "dev-master",
+                "phpactor/text-document": "^1.0@dev",
+                "phpactor/worse-reflection": "~0.2"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.13",
+                "phpactor/test-utils": "^1.0@dev",
+                "phpbench/phpbench": "^1.0@dev",
+                "phpstan/phpstan": "^0.10.0@dev",
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\Completion\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Completion library for Worse Reflection",
+            "time": "2019-01-12T21:27:14+00:00"
+        },
+        {
+            "name": "phpactor/completion-extension",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/completion-extension.git",
+                "reference": "bdd9ef76813acf4ae6a81bc2f1d55b4e04c33020"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/completion-extension/zipball/bdd9ef76813acf4ae6a81bc2f1d55b4e04c33020",
+                "reference": "bdd9ef76813acf4ae6a81bc2f1d55b4e04c33020",
+                "shasum": ""
+            },
+            "require": {
+                "phpactor/completion": "~0.2",
+                "phpactor/container": "^1.0",
+                "phpactor/logging-extension": "~0.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.13",
+                "phpstan/phpstan": "^0.10.4",
+                "phpunit/phpunit": "^7.4"
+            },
+            "type": "phpactor-extension",
+            "extra": {
+                "phpactor.extension_class": "Phpactor\\Extension\\Completion\\CompletionExtension",
+                "branch-alias": {
+                    "dev-master": "0.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\Extension\\Completion\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Phpactor Code Completion Extension",
+            "time": "2019-01-12T16:49:41+00:00"
+        },
+        {
+            "name": "phpactor/completion-rpc-extension",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/completion-rpc-extension.git",
+                "reference": "0968cd63d4408905e4a4df646986de5a6822343e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/completion-rpc-extension/zipball/0968cd63d4408905e4a4df646986de5a6822343e",
+                "reference": "0968cd63d4408905e4a4df646986de5a6822343e",
+                "shasum": ""
+            },
+            "require": {
+                "phpactor/completion-extension": "~0.2",
+                "phpactor/rpc-extension": "~0.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.13",
+                "phpactor/test-utils": "^1.0",
+                "phpstan/phpstan": "^0.10.5",
+                "phpunit/phpunit": "^7.4"
+            },
+            "type": "phpactor-extension",
+            "extra": {
+                "phpactor.extension_class": "Phpactor\\Extension\\CompletionRpc\\CompletionRpcExtension",
+                "branch-alias": {
+                    "dev-master": "0.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\Extension\\CompletionRpc\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "RPC support for the Completion Extension",
+            "time": "2019-01-06T11:32:15+00:00"
+        },
+        {
+            "name": "phpactor/completion-worse-extension",
+            "version": "0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/completion-worse-extension.git",
+                "reference": "3d1b510b7af4573b453d13d912236b3fdefcc7f5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/completion-worse-extension/zipball/3d1b510b7af4573b453d13d912236b3fdefcc7f5",
+                "reference": "3d1b510b7af4573b453d13d912236b3fdefcc7f5",
+                "shasum": ""
+            },
+            "require": {
+                "phpactor/completion-extension": "~0.2",
+                "phpactor/source-code-filesystem-extension": "~0.1",
+                "phpactor/worse-reflection-extension": "~0.2"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.13",
+                "phpstan/phpstan": "^0.10.4",
+                "phpunit/phpunit": "^7.4"
+            },
+            "type": "phpactor-extension",
+            "extra": {
+                "phpactor.extension_class": "Phpactor\\Extension\\CompletionWorse\\CompletionWorseExtension",
+                "branch-alias": {
+                    "dev-master": "0.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\Extension\\CompletionWorse\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Collection of completors based on Worse Reflection and the Tolerant PHP Parser",
+            "time": "2019-01-12T17:07:59+00:00"
+        },
+        {
+            "name": "phpactor/composer-autoloader-extension",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/composer-autoloader-extension.git",
+                "reference": "836f4e98ace65a25acd178ef596842bd26999c56"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/composer-autoloader-extension/zipball/836f4e98ace65a25acd178ef596842bd26999c56",
+                "reference": "836f4e98ace65a25acd178ef596842bd26999c56",
+                "shasum": ""
+            },
+            "require": {
+                "phpactor/container": "^1.2",
+                "phpactor/file-path-resolver-extension": "~0.1",
+                "phpactor/logging-extension": "~0.2"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.13",
+                "phpstan/phpstan": "^0.10.5",
+                "phpunit/phpunit": "^7.4"
+            },
+            "type": "phpactor-extension",
+            "extra": {
+                "phpactor.extension_class": "Phpactor\\Extension\\ComposerAutoloader\\ComposerAutoloaderExtension",
+                "branch-alias": {
+                    "dev-master": "0.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\Extension\\ComposerAutoloader\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Composer Autoloader provider",
+            "time": "2019-03-03T12:05:19+00:00"
+        },
+        {
+            "name": "phpactor/config-loader",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/config-loader.git",
+                "reference": "ad0ed03d2a72bd6c3d5aeb1740dc07791c7e3093"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/config-loader/zipball/ad0ed03d2a72bd6c3d5aeb1740dc07791c7e3093",
+                "reference": "ad0ed03d2a72bd6c3d5aeb1740dc07791c7e3093",
+                "shasum": ""
+            },
+            "require": {
+                "dnoegel/php-xdg-base-dir": "^0.1.0",
+                "webmozart/path-util": "^2.3"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.13",
+                "phpactor/test-utils": "^1.0",
+                "phpbench/phpbench": "^0.14.0",
+                "phpstan/phpstan": "^0.10.5",
+                "phpunit/phpunit": "^7.4",
+                "symfony/yaml": "^4.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\ConfigLoader\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Library to load (user) configuration",
+            "time": "2019-02-16T15:35:49+00:00"
+        },
+        {
+            "name": "phpactor/console-extension",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/console-extension.git",
+                "reference": "4f7b24005629307ebeb2adae1ae69124560a3b41"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/console-extension/zipball/4f7b24005629307ebeb2adae1ae69124560a3b41",
+                "reference": "4f7b24005629307ebeb2adae1ae69124560a3b41",
+                "shasum": ""
+            },
+            "require": {
+                "phpactor/container": "^1.0",
+                "symfony/console": "^4.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.13",
+                "phpstan/phpstan": "^0.10.5",
+                "phpunit/phpunit": "^7.4"
+            },
+            "type": "phpactor-extension",
+            "extra": {
+                "phpactor.extension_class": "Phpactor\\Extension\\Console\\ConsoleExtension",
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\Extension\\Console\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Integrate Symfony Console commands",
+            "time": "2019-01-06T11:53:30+00:00"
+        },
+        {
+            "name": "phpactor/container",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/container.git",
+                "reference": "dbeba5667f6530be03bec2ade148764ea006b085"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/container/zipball/dbeba5667f6530be03bec2ade148764ea006b085",
+                "reference": "dbeba5667f6530be03bec2ade148764ea006b085",
+                "shasum": ""
+            },
+            "require": {
+                "phpactor/map-resolver": "^1.0",
+                "psr/container": "^1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\Container\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Phpactor's DI Container",
+            "time": "2019-01-01T22:44:29+00:00"
+        },
+        {
+            "name": "phpactor/docblock",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/docblock.git",
+                "reference": "0acb9bf8d6b4cd5ee5cb4111d8aa347138484343"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/docblock/zipball/0acb9bf8d6b4cd5ee5cb4111d8aa347138484343",
+                "reference": "0acb9bf8d6b4cd5ee5cb4111d8aa347138484343",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\Docblock\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Simple Docblock Parser",
+            "time": "2019-03-03T12:35:29+00:00"
+        },
+        {
+            "name": "phpactor/extension-manager-extension",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/extension-manager-extension.git",
+                "reference": "9700d23d53e22acf8187d88a1b56448eaa93ca74"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/extension-manager-extension/zipball/9700d23d53e22acf8187d88a1b56448eaa93ca74",
+                "reference": "9700d23d53e22acf8187d88a1b56448eaa93ca74",
+                "shasum": ""
+            },
+            "require": {
+                "composer/composer": "^1.7",
+                "phpactor/console-extension": "~0.1",
+                "phpactor/container": "^1.0",
+                "phpactor/file-path-resolver-extension": "~0.1",
+                "webmozart/path-util": "^2.3"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.13",
+                "phpactor/rpc-extension": "~0.1",
+                "phpactor/test-utils": "^1.0",
+                "phpstan/phpstan": "^0.10.5",
+                "phpunit/phpunit": "^7.4"
+            },
+            "type": "phpactor-extension",
+            "extra": {
+                "phpactor.extension_class": "Phpactor\\Extension\\ExtensionManager\\ExtensionManagerExtension",
+                "branch-alias": {
+                    "dev-master": "0.7.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\Extension\\ExtensionManager\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Install, remove and otherwise manage extensions",
+            "time": "2019-03-03T13:10:52+00:00"
+        },
+        {
+            "name": "phpactor/file-path-resolver",
+            "version": "0.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/file-path-resolver.git",
+                "reference": "01ab55ab723adb72859bdfd57db02013a739e370"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/file-path-resolver/zipball/01ab55ab723adb72859bdfd57db02013a739e370",
+                "reference": "01ab55ab723adb72859bdfd57db02013a739e370",
+                "shasum": ""
+            },
+            "require": {
+                "dnoegel/php-xdg-base-dir": "^0.1.0",
+                "webmozart/path-util": "^2.3"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.13",
+                "phpbench/phpbench": "^0.14.0",
+                "phpstan/phpstan": "^0.10.5",
+                "phpunit/phpunit": "^7.4",
+                "psr/log": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\FilePathResolver\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Resolve files paths for your application (e.g. cache, data, etc)",
+            "time": "2019-01-01T15:50:20+00:00"
+        },
+        {
+            "name": "phpactor/file-path-resolver-extension",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/file-path-resolver-extension.git",
+                "reference": "8a3230a56d14bbe1cf6e0348c5ab4d7a7cc1d0ca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/file-path-resolver-extension/zipball/8a3230a56d14bbe1cf6e0348c5ab4d7a7cc1d0ca",
+                "reference": "8a3230a56d14bbe1cf6e0348c5ab4d7a7cc1d0ca",
+                "shasum": ""
+            },
+            "require": {
+                "phpactor/container": "^1.0",
+                "phpactor/file-path-resolver": "~0.7",
+                "phpactor/logging-extension": "~0.3"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.13",
+                "phpstan/phpstan": "^0.10.5",
+                "phpunit/phpunit": "^7.4"
+            },
+            "type": "phpactor-extension",
+            "extra": {
+                "phpactor.extension_class": "Phpactor\\FilePathResolverExtension\\FilePathResolverExtension",
+                "branch-alias": {
+                    "dev-master": "0.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\FilePathResolverExtension\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "File Path Resolver Extension",
+            "time": "2019-01-01T15:55:12+00:00"
+        },
+        {
+            "name": "phpactor/logging-extension",
+            "version": "0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/logging-extension.git",
+                "reference": "df7c25c0acd13cc8156b56c5d950ce04de79b566"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/logging-extension/zipball/df7c25c0acd13cc8156b56c5d950ce04de79b566",
+                "reference": "df7c25c0acd13cc8156b56c5d950ce04de79b566",
+                "shasum": ""
+            },
+            "require": {
+                "monolog/monolog": "^1.23",
+                "phpactor/container": "^1.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.13",
+                "phpstan/phpstan": "^0.10.5",
+                "phpunit/phpunit": "^7.4"
+            },
+            "type": "phpactor-extension",
+            "extra": {
+                "phpactor.extension_class": "Phpactor\\Extension\\Logger\\LoggingExtension"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\Extension\\Logger\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "PSR logging extension",
+            "time": "2018-11-11T15:20:35+00:00"
+        },
+        {
+            "name": "phpactor/map-resolver",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/map-resolver.git",
+                "reference": "99cab3dcec9ada1010d972682701df81e061bb2e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/map-resolver/zipball/99cab3dcec9ada1010d972682701df81e061bb2e",
+                "reference": "99cab3dcec9ada1010d972682701df81e061bb2e",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\MapResolver\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Map Resolver",
+            "time": "2018-10-26T13:29:57+00:00"
+        },
+        {
+            "name": "phpactor/path-finder",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/path-finder.git",
+                "reference": "9375374c41bf4e0b290a2e2e46bd0d341944d2c0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/path-finder/zipball/9375374c41bf4e0b290a2e2e46bd0d341944d2c0",
+                "reference": "9375374c41bf4e0b290a2e2e46bd0d341944d2c0",
+                "shasum": ""
+            },
+            "require": {
+                "webmozart/path-util": "^2.3"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^0.8.5",
+                "phpunit/phpunit": "^6.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\ClassFileConverter\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Utility for navigating to related source files",
+            "time": "2017-11-04T12:57:48+00:00"
+        },
+        {
+            "name": "phpactor/phpactor",
+            "version": "0.12.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/phpactor.git",
+                "reference": "b37de8b69d525ce8e0d5a30decd59017d656df51"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/phpactor/zipball/b37de8b69d525ce8e0d5a30decd59017d656df51",
+                "reference": "b37de8b69d525ce8e0d5a30decd59017d656df51",
+                "shasum": ""
+            },
+            "require": {
+                "composer/xdebug-handler": "^1.1",
+                "monolog/monolog": "^1.0",
+                "ocramius/package-versions": "^1.2",
+                "php": "^7.1",
+                "phpactor/class-mover": "~0.1",
+                "phpactor/class-to-file-extension": "~0.2",
+                "phpactor/code-transform": "~0.1",
+                "phpactor/code-transform-extension": "^0.1",
+                "phpactor/completion": "~0.2",
+                "phpactor/completion-extension": "~0.2",
+                "phpactor/completion-rpc-extension": "~0.2",
+                "phpactor/completion-worse-extension": "~0.1.1",
+                "phpactor/composer-autoloader-extension": "~0.1",
+                "phpactor/config-loader": "~0.1",
+                "phpactor/console-extension": "~0.1",
+                "phpactor/container": "^1.0",
+                "phpactor/extension-manager-extension": "~0.1",
+                "phpactor/file-path-resolver-extension": "~0.1",
+                "phpactor/logging-extension": "~0.2",
+                "phpactor/path-finder": "dev-master",
+                "phpactor/reference-finder-rpc-extension": "~0.1",
+                "phpactor/rpc-extension": "~0.1",
+                "phpactor/source-code-filesystem": "~0.1",
+                "phpactor/source-code-filesystem-extension": "~0.1.2",
+                "phpactor/worse-reference-finder-extension": "~0.1",
+                "phpactor/worse-reflection": "~0.1",
+                "phpactor/worse-reflection-extension": "~0.1",
+                "phpbench/container": "^1.0",
+                "sebastian/diff": "2.0.x-dev",
+                "symfony/filesystem": "^3.3",
+                "symfony/yaml": "^3.3",
+                "webmozart/glob": "^4.1"
+            },
+            "require-dev": {
+                "dantleech/what-changed": "~0.1",
+                "friendsofphp/php-cs-fixer": "^2.12@dev",
+                "phpactor/test-utils": "dev-master",
+                "phpbench/phpbench": "^1.0@dev",
+                "phpunit/phpunit": "^6.0",
+                "symfony/debug": "^4.0",
+                "symfony/options-resolver": "^2.7|^3.0",
+                "symfony/process": "^2.7|^3.0"
+            },
+            "bin": [
+                "bin/phpactor"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "PHP refactoring and intellisense tool for text editors",
+            "time": "2019-03-03T14:44:33+00:00"
+        },
+        {
+            "name": "phpactor/reference-finder",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/reference-finder.git",
+                "reference": "4b47b71607e882d43d39c8093bb4f3470ce02a43"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/reference-finder/zipball/4b47b71607e882d43d39c8093bb4f3470ce02a43",
+                "reference": "4b47b71607e882d43d39c8093bb4f3470ce02a43",
+                "shasum": ""
+            },
+            "require": {
+                "phpactor/text-document": "~1.0",
+                "psr/log": "^1.1",
+                "webmozart/path-util": "^2.3"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.13",
+                "phpstan/phpstan": "^0.10.5",
+                "phpunit/phpunit": "^7.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\ReferenceFinder\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Base library for finding definitions",
+            "time": "2019-03-03T12:25:39+00:00"
+        },
+        {
+            "name": "phpactor/reference-finder-extension",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/reference-finder-extension.git",
+                "reference": "ea043ba814f9a8168e5f017957c42b1d6e747a35"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/reference-finder-extension/zipball/ea043ba814f9a8168e5f017957c42b1d6e747a35",
+                "reference": "ea043ba814f9a8168e5f017957c42b1d6e747a35",
+                "shasum": ""
+            },
+            "require": {
+                "phpactor/container": "^1.0",
+                "phpactor/logging-extension": "~0.1",
+                "phpactor/reference-finder": "~0.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.13",
+                "phpstan/phpstan": "^0.10.6",
+                "phpunit/phpunit": "^7.5"
+            },
+            "type": "phpactor-extension",
+            "extra": {
+                "phpactor.extension_class": "Phpactor\\Extension\\ReferenceFinder\\ReferenceFinderExtension",
+                "branch-alias": {
+                    "dev-master": "0.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\Extension\\ReferenceFinder\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Goto definition functionality",
+            "time": "2019-03-03T12:22:08+00:00"
+        },
+        {
+            "name": "phpactor/reference-finder-rpc-extension",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/reference-finder-rpc-extension.git",
+                "reference": "0958459b72794b45d20d79bf0d78c4c82b6f6ade"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/reference-finder-rpc-extension/zipball/0958459b72794b45d20d79bf0d78c4c82b6f6ade",
+                "reference": "0958459b72794b45d20d79bf0d78c4c82b6f6ade",
+                "shasum": ""
+            },
+            "require": {
+                "phpactor/container": "^1.0",
+                "phpactor/reference-finder-extension": "~0.1",
+                "phpactor/rpc-extension": "~0.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.13",
+                "phpstan/phpstan": "^0.10.6",
+                "phpunit/phpunit": "^7.5"
+            },
+            "type": "phpactor-extension",
+            "extra": {
+                "phpactor.extension_class": "Phpactor\\Extension\\ReferenceFinderRpc\\ReferenceFinderRpcExtension",
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\Extension\\ReferenceFinderRpc\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Description about my project",
+            "time": "2019-01-06T12:13:56+00:00"
+        },
+        {
+            "name": "phpactor/rpc-extension",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/rpc-extension.git",
+                "reference": "520431256783babac3f23f27d73dd19d824accfb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/rpc-extension/zipball/520431256783babac3f23f27d73dd19d824accfb",
+                "reference": "520431256783babac3f23f27d73dd19d824accfb",
+                "shasum": ""
+            },
+            "require": {
+                "phpactor/console-extension": "~0.1",
+                "phpactor/container": "^1.1",
+                "phpactor/file-path-resolver-extension": "~0.1",
+                "phpactor/logging-extension": "~0.2"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.13",
+                "phpactor/test-utils": "^1.0",
+                "phpstan/phpstan": "^0.10.5",
+                "phpunit/phpunit": "^7.4"
+            },
+            "type": "phpactor-extension",
+            "extra": {
+                "phpactor.extension_class": "Phpactor\\Extension\\Rpc\\RpcExtension",
+                "branch-alias": {
+                    "dev-master": "0.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\Extension\\Rpc\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "RPC Extension",
+            "time": "2019-03-03T12:28:28+00:00"
+        },
+        {
+            "name": "phpactor/source-code-filesystem",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/source-code-filesystem.git",
+                "reference": "9f223092c35b65c86536ccc762741b32ea215549"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/source-code-filesystem/zipball/9f223092c35b65c86536ccc762741b32ea215549",
+                "reference": "9f223092c35b65c86536ccc762741b32ea215549",
+                "shasum": ""
+            },
+            "require": {
+                "webmozart/path-util": "^2.3"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^0.9.2",
+                "phpunit/phpunit": "^6.2",
+                "symfony/filesystem": "^3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\Filesystem\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Filesystem library for working with source code files",
+            "time": "2019-01-06T11:59:25+00:00"
+        },
+        {
+            "name": "phpactor/source-code-filesystem-extension",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/source-code-filesystem-extension.git",
+                "reference": "9650971e3017f908e04db88157d3927915170f28"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/source-code-filesystem-extension/zipball/9650971e3017f908e04db88157d3927915170f28",
+                "reference": "9650971e3017f908e04db88157d3927915170f28",
+                "shasum": ""
+            },
+            "require": {
+                "phpactor/composer-autoloader-extension": "~0.1",
+                "phpactor/container": "^1.2",
+                "phpactor/file-path-resolver-extension": "~0.1",
+                "phpactor/source-code-filesystem": "~0.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.13",
+                "phpstan/phpstan": "^0.10.5",
+                "phpunit/phpunit": "^7.4"
+            },
+            "type": "phpactor-extension",
+            "extra": {
+                "phpactor.extension_class": "Phpactor\\Extension\\SourceCodeFilesystem\\SourceCodeFilesystemExtension",
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\Extension\\SourceCodeFilesystem\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Source Code Filesystem Extension",
+            "time": "2019-03-03T13:37:45+00:00"
+        },
+        {
+            "name": "phpactor/text-document",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/text-document.git",
+                "reference": "203c8d317bb3d9d8e58ab965357cbad133f82110"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/text-document/zipball/203c8d317bb3d9d8e58ab965357cbad133f82110",
+                "reference": "203c8d317bb3d9d8e58ab965357cbad133f82110",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1",
+                "webmozart/path-util": "^2.3"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.13",
+                "infection/infection": "^0.11.4",
+                "phpstan/phpstan": "^0.10.7",
+                "phpunit/phpunit": "^7.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\TextDocument\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Collection of value objects for representing and referencing text documents",
+            "time": "2019-01-02T18:56:26+00:00"
+        },
+        {
+            "name": "phpactor/worse-reference-finder-extension",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/worse-reference-finder-extension.git",
+                "reference": "a88cf1edea57d53e588f81b6489e7ee94d700924"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/worse-reference-finder-extension/zipball/a88cf1edea57d53e588f81b6489e7ee94d700924",
+                "reference": "a88cf1edea57d53e588f81b6489e7ee94d700924",
+                "shasum": ""
+            },
+            "require": {
+                "phpactor/container": "^1.0",
+                "phpactor/reference-finder-extension": "~0.1",
+                "phpactor/worse-reference-finders": "~0.1",
+                "phpactor/worse-reflection-extension": "~0.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.13",
+                "phpstan/phpstan": "^0.10.6",
+                "phpunit/phpunit": "^7.5"
+            },
+            "type": "phpactor-extension",
+            "extra": {
+                "phpactor.extension_class": "Phpactor\\Extension\\WorseReferenceFinder\\WorseReferenceFinderExtension",
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\Extension\\WorseReferenceFinder\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Worse reflection implementations for reference finding",
+            "time": "2019-01-06T12:11:46+00:00"
+        },
+        {
+            "name": "phpactor/worse-reference-finders",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/worse-reference-finder.git",
+                "reference": "78bd0209b34dccbe84ce1e238390cf0f5b86da15"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/worse-reference-finder/zipball/78bd0209b34dccbe84ce1e238390cf0f5b86da15",
+                "reference": "78bd0209b34dccbe84ce1e238390cf0f5b86da15",
+                "shasum": ""
+            },
+            "require": {
+                "phpactor/reference-finder": "~0.1",
+                "phpactor/worse-reflection": "~0.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.13",
+                "phpactor/test-utils": "^1.0@dev",
+                "phpstan/phpstan": "^0.10.6",
+                "phpunit/phpunit": "^7.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\WorseReferenceFinder\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Worse Reflection reference finder implementations",
+            "time": "2019-03-03T12:30:27+00:00"
+        },
+        {
+            "name": "phpactor/worse-reflection",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/worse-reflection.git",
+                "reference": "8fc0afa455d302b4b3ad9b6de07ab514384d6283"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/worse-reflection/zipball/8fc0afa455d302b4b3ad9b6de07ab514384d6283",
+                "reference": "8fc0afa455d302b4b3ad9b6de07ab514384d6283",
+                "shasum": ""
+            },
+            "require": {
+                "jetbrains/phpstorm-stubs": "*",
+                "microsoft/tolerant-php-parser": "~0.0",
+                "php": "^7.1",
+                "phpactor/docblock": "~0.2",
+                "phpactor/text-document": "~1.0",
+                "psr/log": "^1.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.13",
+                "phpactor/class-to-file": "~0.1",
+                "phpactor/test-utils": "@dev",
+                "phpbench/phpbench": "dev-master",
+                "phpstan/phpstan": "^0.8.5",
+                "phpunit/phpunit": "^6.0@stable",
+                "symfony/filesystem": "^3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\WorseReflection\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Lazy AST reflector that is much worse than better",
+            "time": "2019-03-03T12:32:59+00:00"
+        },
+        {
+            "name": "phpactor/worse-reflection-extension",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpactor/worse-reflection-extension.git",
+                "reference": "465ac2fa786451fea6d7294cc29e629ebce5c2e9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpactor/worse-reflection-extension/zipball/465ac2fa786451fea6d7294cc29e629ebce5c2e9",
+                "reference": "465ac2fa786451fea6d7294cc29e629ebce5c2e9",
+                "shasum": ""
+            },
+            "require": {
+                "phpactor/class-to-file-extension": "~0.1",
+                "phpactor/composer-autoloader-extension": "~0.1",
+                "phpactor/container": "^1.2",
+                "phpactor/file-path-resolver-extension": "~0.1",
+                "phpactor/logging-extension": "~0.3",
+                "phpactor/worse-reflection": "~0.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.13",
+                "phpstan/phpstan": "^0.10.5",
+                "phpunit/phpunit": "^7.3"
+            },
+            "type": "phpactor-extension",
+            "extra": {
+                "phpactor.extension_class": "Phpactor\\Extension\\WorseReflection\\WorseReflectionExtension",
+                "branch-alias": {
+                    "dev-master": "0.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpactor\\Extension\\WorseReflection\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Worse Reflection",
+            "time": "2018-12-27T11:51:34+00:00"
+        },
+        {
+            "name": "phpbench/container",
+            "version": "1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpbench/container.git",
+                "reference": "c0e3cbf1cd8f867c70b029cb6d1b0b39fe6d409d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpbench/container/zipball/c0e3cbf1cd8f867c70b029cb6d1b0b39fe6d409d",
+                "reference": "c0e3cbf1cd8f867c70b029cb6d1b0b39fe6d409d",
+                "shasum": ""
+            },
+            "require": {
+                "psr/container": "^1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.36"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PhpBench\\DependencyInjection\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Leech",
+                    "email": "daniel@dantleech.com"
+                }
+            ],
+            "description": "Simple, configurable, service container.",
+            "time": "2018-02-12T08:08:59+00:00"
+        },
+        {
+            "name": "psr/container",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/container.git",
+                "reference": "014d250daebff39eba15ba990eeb2a140798e77c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/014d250daebff39eba15ba990eeb2a140798e77c",
+                "reference": "014d250daebff39eba15ba990eeb2a140798e77c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common Container Interface (PHP FIG PSR-11)",
+            "homepage": "https://github.com/php-fig/container",
+            "keywords": [
+                "PSR-11",
+                "container",
+                "container-interface",
+                "container-interop",
+                "psr"
+            ],
+            "time": "2018-12-29T15:36:03+00:00"
+        },
+        {
+            "name": "psr/log",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "c4421fcac1edd5a324fda73e589a5cf96e52ffd0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/c4421fcac1edd5a324fda73e589a5cf96e52ffd0",
+                "reference": "c4421fcac1edd5a324fda73e589a5cf96e52ffd0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Log\\": "Psr/Log/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "homepage": "https://github.com/php-fig/log",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "time": "2018-11-21T13:42:00+00:00"
+        },
+        {
+            "name": "sebastian/diff",
+            "version": "2.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/diff.git",
+                "reference": "abcc70409ddfb310a8cb41ef0c2e857425438cf4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/abcc70409ddfb310a8cb41ef0c2e857425438cf4",
+                "reference": "abcc70409ddfb310a8cb41ef0c2e857425438cf4",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kore Nordmann",
+                    "email": "mail@kore-nordmann.de"
+                },
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                }
+            ],
+            "description": "Diff implementation",
+            "homepage": "https://github.com/sebastianbergmann/diff",
+            "keywords": [
+                "diff"
+            ],
+            "time": "2017-12-14T11:32:19+00:00"
+        },
+        {
+            "name": "seld/jsonlint",
+            "version": "1.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Seldaek/jsonlint.git",
+                "reference": "d15f59a67ff805a44c50ea0516d2341740f81a38"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/d15f59a67ff805a44c50ea0516d2341740f81a38",
+                "reference": "d15f59a67ff805a44c50ea0516d2341740f81a38",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3 || ^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0"
+            },
+            "bin": [
+                "bin/jsonlint"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Seld\\JsonLint\\": "src/Seld/JsonLint/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                }
+            ],
+            "description": "JSON Linter",
+            "keywords": [
+                "json",
+                "linter",
+                "parser",
+                "validator"
+            ],
+            "time": "2018-01-24T12:46:19+00:00"
+        },
+        {
+            "name": "seld/phar-utils",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Seldaek/phar-utils.git",
+                "reference": "7009b5139491975ef6486545a39f3e6dad5ac30a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Seldaek/phar-utils/zipball/7009b5139491975ef6486545a39f3e6dad5ac30a",
+                "reference": "7009b5139491975ef6486545a39f3e6dad5ac30a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Seld\\PharUtils\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be"
+                }
+            ],
+            "description": "PHAR file format utilities, for when PHP phars you up",
+            "keywords": [
+                "phra"
+            ],
+            "time": "2015-10-13T18:44:15+00:00"
+        },
+        {
+            "name": "symfony/console",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/console.git",
+                "reference": "122a9f0a0c653ecba733ce3b330b27035042d9c6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/console/zipball/122a9f0a0c653ecba733ce3b330b27035042d9c6",
+                "reference": "122a9f0a0c653ecba733ce3b330b27035042d9c6",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3",
+                "symfony/contracts": "^1.0",
+                "symfony/polyfill-mbstring": "~1.0",
+                "symfony/polyfill-php73": "^1.8"
+            },
+            "conflict": {
+                "symfony/dependency-injection": "<3.4",
+                "symfony/process": "<3.3"
+            },
+            "provide": {
+                "psr/log-implementation": "1.0"
+            },
+            "require-dev": {
+                "psr/log": "~1.0",
+                "symfony/config": "~3.4|~4.0",
+                "symfony/dependency-injection": "~3.4|~4.0",
+                "symfony/event-dispatcher": "~3.4|~4.0",
+                "symfony/lock": "~3.4|~4.0",
+                "symfony/process": "~3.4|~4.0"
+            },
+            "suggest": {
+                "psr/log": "For using the console logger",
+                "symfony/event-dispatcher": "",
+                "symfony/lock": "",
+                "symfony/process": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Console\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Console Component",
+            "homepage": "https://symfony.com",
+            "time": "2019-02-23T15:22:31+00:00"
+        },
+        {
+            "name": "symfony/contracts",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/contracts.git",
+                "reference": "fb450641fd0e43647ddc5415f3132276545933ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/contracts/zipball/fb450641fd0e43647ddc5415f3132276545933ec",
+                "reference": "fb450641fd0e43647ddc5415f3132276545933ec",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3"
+            },
+            "require-dev": {
+                "psr/cache": "^1.0",
+                "psr/container": "^1.0",
+                "symfony/polyfill-intl-idn": "^1.10"
+            },
+            "suggest": {
+                "psr/cache": "When using the Cache contracts",
+                "psr/container": "When using the Service contracts",
+                "symfony/cache-contracts-implementation": "",
+                "symfony/http-client-contracts-implementation": "",
+                "symfony/service-contracts-implementation": "",
+                "symfony/translation-contracts-implementation": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Contracts\\": ""
+                },
+                "exclude-from-classmap": [
+                    "**/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "A set of abstractions extracted out of the Symfony components",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "abstractions",
+                "contracts",
+                "decoupling",
+                "interfaces",
+                "interoperability",
+                "standards"
+            ],
+            "time": "2019-03-14T07:32:36+00:00"
+        },
+        {
+            "name": "symfony/filesystem",
+            "version": "3.4.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/filesystem.git",
+                "reference": "acf99758b1df8e9295e6b85aa69f294565c9fedb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/acf99758b1df8e9295e6b85aa69f294565c9fedb",
+                "reference": "acf99758b1df8e9295e6b85aa69f294565c9fedb",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9|>=7.0.8",
+                "symfony/polyfill-ctype": "~1.8"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Filesystem\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Filesystem Component",
+            "homepage": "https://symfony.com",
+            "time": "2019-02-04T21:34:32+00:00"
+        },
+        {
+            "name": "symfony/finder",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/finder.git",
+                "reference": "c2a5a99744e881c987e22faf443b74b661cada3c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/c2a5a99744e881c987e22faf443b74b661cada3c",
+                "reference": "c2a5a99744e881c987e22faf443b74b661cada3c",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Finder\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Finder Component",
+            "homepage": "https://symfony.com",
+            "time": "2019-02-23T15:42:19+00:00"
+        },
+        {
+            "name": "symfony/polyfill-ctype",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-ctype.git",
+                "reference": "82ebae02209c21113908c229e9883c419720738a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/82ebae02209c21113908c229e9883c419720738a",
+                "reference": "82ebae02209c21113908c229e9883c419720738a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "ext-ctype": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.11-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Ctype\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                },
+                {
+                    "name": "Gert de Pagter",
+                    "email": "BackEndTea@gmail.com"
+                }
+            ],
+            "description": "Symfony polyfill for ctype functions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "ctype",
+                "polyfill",
+                "portable"
+            ],
+            "time": "2019-02-06T07:57:58+00:00"
+        },
+        {
+            "name": "symfony/polyfill-mbstring",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-mbstring.git",
+                "reference": "fe5e94c604826c35a32fa832f35bd036b6799609"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/fe5e94c604826c35a32fa832f35bd036b6799609",
+                "reference": "fe5e94c604826c35a32fa832f35bd036b6799609",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "ext-mbstring": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.11-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for the Mbstring extension",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "mbstring",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2019-02-06T07:57:58+00:00"
+        },
+        {
+            "name": "symfony/polyfill-php73",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php73.git",
+                "reference": "d1fb4abcc0c47be136208ad9d68bf59f1ee17abd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/d1fb4abcc0c47be136208ad9d68bf59f1ee17abd",
+                "reference": "d1fb4abcc0c47be136208ad9d68bf59f1ee17abd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.11-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php73\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ],
+                "classmap": [
+                    "Resources/stubs"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 7.3+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2019-02-06T07:57:58+00:00"
+        },
+        {
+            "name": "symfony/process",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/process.git",
+                "reference": "9ba593fa9634a98363bbf089ab9b4da39f3e0d8a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/process/zipball/9ba593fa9634a98363bbf089ab9b4da39f3e0d8a",
+                "reference": "9ba593fa9634a98363bbf089ab9b4da39f3e0d8a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Process\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Process Component",
+            "homepage": "https://symfony.com",
+            "time": "2019-03-11T20:50:47+00:00"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "3.4.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "57f1ce82c997f5a8701b89ef970e36bb657fd09c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/57f1ce82c997f5a8701b89ef970e36bb657fd09c",
+                "reference": "57f1ce82c997f5a8701b89ef970e36bb657fd09c",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9|>=7.0.8",
+                "symfony/polyfill-ctype": "~1.8"
+            },
+            "conflict": {
+                "symfony/console": "<3.4"
+            },
+            "require-dev": {
+                "symfony/console": "~3.4|~4.0"
+            },
+            "suggest": {
+                "symfony/console": "For validating YAML files using the lint command"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Yaml\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Yaml Component",
+            "homepage": "https://symfony.com",
+            "time": "2019-02-23T15:06:07+00:00"
+        },
+        {
+            "name": "twig/twig",
+            "version": "2.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twigphp/Twig.git",
+                "reference": "5aab10578e1bbb014d7d61b28d23e65336fd091c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/5aab10578e1bbb014d7d61b28d23e65336fd091c",
+                "reference": "5aab10578e1bbb014d7d61b28d23e65336fd091c",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0",
+                "symfony/polyfill-ctype": "^1.8",
+                "symfony/polyfill-mbstring": "^1.3"
+            },
+            "require-dev": {
+                "psr/container": "^1.0",
+                "symfony/debug": "^2.7",
+                "symfony/phpunit-bridge": "^3.4.19|^4.1.8"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Twig_": "lib/"
+                },
+                "psr-4": {
+                    "Twig\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Armin Ronacher",
+                    "email": "armin.ronacher@active-4.com",
+                    "role": "Project Founder"
+                },
+                {
+                    "name": "Twig Team",
+                    "homepage": "https://twig.symfony.com/contributors",
+                    "role": "Contributors"
+                }
+            ],
+            "description": "Twig, the flexible, fast, and secure template language for PHP",
+            "homepage": "https://twig.symfony.com",
+            "keywords": [
+                "templating"
+            ],
+            "time": "2019-03-16T11:03:28+00:00"
+        },
+        {
+            "name": "webmozart/assert",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webmozart/assert.git",
+                "reference": "83e253c8e0be5b0257b881e1827274667c5c17a9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webmozart/assert/zipball/83e253c8e0be5b0257b881e1827274667c5c17a9",
+                "reference": "83e253c8e0be5b0257b881e1827274667c5c17a9",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.3 || ^7.0",
+                "symfony/polyfill-ctype": "^1.8"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.6",
+                "sebastian/version": "^1.0.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Webmozart\\Assert\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@gmail.com"
+                }
+            ],
+            "description": "Assertions to validate method input/output with nice error messages.",
+            "keywords": [
+                "assert",
+                "check",
+                "validate"
+            ],
+            "time": "2018-12-25T11:19:39+00:00"
+        },
+        {
+            "name": "webmozart/glob",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webmozart/glob.git",
+                "reference": "8da14867b709e8776d9f6272faaf844aefc695e3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webmozart/glob/zipball/8da14867b709e8776d9f6272faaf844aefc695e3",
+                "reference": "8da14867b709e8776d9f6272faaf844aefc695e3",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.3|^7.0",
+                "webmozart/path-util": "^2.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.6",
+                "sebastian/version": "^1.0.1",
+                "symfony/filesystem": "^2.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Webmozart\\Glob\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@gmail.com"
+                }
+            ],
+            "description": "A PHP implementation of Ant's glob.",
+            "time": "2016-08-15T15:31:26+00:00"
+        },
+        {
+            "name": "webmozart/path-util",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webmozart/path-util.git",
+                "reference": "95a8f7ad150c2a3773ff3c3d04f557a24c99cfd2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webmozart/path-util/zipball/95a8f7ad150c2a3773ff3c3d04f557a24c99cfd2",
+                "reference": "95a8f7ad150c2a3773ff3c3d04f557a24c99cfd2",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.3|^7.0",
+                "webmozart/assert": "~1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.6",
+                "sebastian/version": "^1.0.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Webmozart\\PathUtil\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@gmail.com"
+                }
+            ],
+            "description": "A robust cross-platform utility for normalizing, comparing and modifying file paths.",
+            "time": "2016-08-15T15:31:42+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "platform-overrides": {
+        "php": "7.1.3"
+    }
+}

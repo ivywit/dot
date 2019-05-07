@@ -56,6 +56,8 @@
  ;; If there is more than one, they won't work right.
  '(global-hl-line-mode t)
  '(global-linum-mode t)
+ '(js2-missing-semi-one-line-override t)
+ '(js2-strict-missing-semi-warning nil)
  '(linum-format (quote linum-format-func))
  '(mode-line-format
    (list " ["
@@ -115,7 +117,7 @@
             (quote font-lock-builtin-face))))))
  '(package-selected-packages
    (quote
-    (company-tern js2-mode flycheck company use-package))))
+    (minimap company-tern js2-mode flycheck company use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -133,9 +135,10 @@
  '(font-lock-type-face ((t (:foreground "color-36"))))
  '(font-lock-variable-name-face ((t (:foreground "color-39"))))
  '(highlight ((t (:background "color-234"))))
- '(js2-external-variable ((t (:foreground "color-136"))))
+ '(js2-external-variable ((t (:foreground "color-111"))))
  '(js2-function-call ((t (:foreground "color-172"))))
  '(js2-function-param ((t (:foreground "dodger blue"))))
+ '(js2-object-property ((t (:foreground "color-168"))))
  '(js2-private-function-call ((t (:foreground "color-183"))))
  '(link ((t (:foreground "color-99" :underline t))))
  '(linum ((t (:foreground "color-235" :background "black"))))

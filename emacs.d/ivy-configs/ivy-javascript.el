@@ -34,6 +34,12 @@
   :config
   (setq tern-command (append tern-command '("--no-port-file"))))
 
+(use-package company-tern
+  :after (company tern)
+  :ensure t
+  :config
+  (add-to-list 'company-backends 'company-tern))
+
 ;; JS Refactoring
 (use-package js2-refactor
   :ensure t
@@ -58,6 +64,11 @@
 (use-package add-node-modules-path
   :ensure t
   :hook (rjsx-mode))
+
+;; Use prettier to keep code clean
+(use-package prettier-js
+  :ensure t
+  :hook (rjsx-mode. prettier-js-mode))
 
 (provide 'ivy-javascript)
 ;;; ivy-javascript.el ends here

@@ -78,6 +78,16 @@
   (setq linum-disabled-modes-list '(term-mode shell-mode eshell-mode wl-summary-mode compilation-mode customize-mode)))
 
 ;;
+;;  Match Parens
+;;
+(use-package paren
+  :ensure t
+  :init
+  (show-paren-mode 1)
+  (set-face-background 'show-paren-match "color-237")
+  (set-face-foreground 'show-paren-match "#def")
+  (set-face-attribute 'show-paren-match nil :weight 'extra-bold))
+;;
 ;; Tramp
 ;;
 (use-package tramp
@@ -111,14 +121,6 @@
   :init (global-company-mode)
   :config (setq company-minimum-prefix-length 2))
 
-(use-package company-tern
-  :ensure t
-  :defer t
-  :config
-  (with-eval-after-load 'company
-    (add-to-list 'company-backends 'company-tern)))
-
-
 ;;
 ;;  Fly Check
 ;;
@@ -127,12 +129,30 @@
   :config (global-flycheck-mode))
 
 ;;
+;;  Ivy
+;;
+(use-package ivy
+  :ensure t
+  :config
+  (ivy-mode 1))
+
+;;
 ;;  Projectile
 ;;
 (use-package projectile
   :ensure t
+  :after ivy
   :bind-keymap ("C-c p". projectile-command-map)
-  :config (projectile-mode +1))
+  :defines projectile-completion-system
+  :functions projectile-register-project-type
+  :config
+  (projectile-mode +1)
+  (setq projectile-completion-system 'ivy)
+  (projectile-register-project-type 'javascript '("package.json")
+                                    :compile "npm install"
+                                    :test "npm test"
+                                    :run "npm start"
+                                    :test-suffix ".spec"))
 
 ;;
 ;;  Magit

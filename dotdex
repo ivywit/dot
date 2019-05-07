@@ -1,1 +1,1 @@
-{"repo":"git@github.com:ivy4vera/dot.git","files":{"dotdex":"~/.dotdex.json","emacs.d":"~/.emacs.d","emacs":"~/.emacs","zsh":"~/.zshrc","zshprompt":"~/.zsh_prompt","aliases":"~/.aliases"}}
+{"repo":"git@github.com:ivy4vera/dot.git","files":{"dotdex":"~/.dotdex.json","emacs":"~/.emacs","zsh":"~/.zshrc","zshprompt":"~/.zsh_prompt","aliases":"~/.aliases","emacs-config":"~/.emacs.d/ivy-configs"}}

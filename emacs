@@ -49,6 +49,12 @@
 (use-package ivy-configuration
   :load-path "ivy-configs")
 
+;;
+;;  Text Files
+;;
+(use-package ivy-text
+  :load-path "ivy-configs")
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

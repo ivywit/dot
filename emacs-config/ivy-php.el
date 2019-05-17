@@ -11,7 +11,13 @@
 
 (use-package web-mode
   :mode ("\\.html?\\'" "\\.phtml\\'" "\\.tpl\\.php\\'" "\\.html\\.twig\\'" "\\.html\\.php\\'")
-  :ensure t)
+  :ensure t
+  :config
+  (setq web-mode-script-padding 2)
+  (setq web-mode-style-padding 2)
+  (setq web-mode-markup-indent-offset 4)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2))
 
 (use-package phpactor
   :ensure t

@@ -155,6 +155,12 @@
                                     :test-suffix ".spec"))
 
 ;;
+;;  Ag Search
+;;
+(use-package ag
+  :ensure t)
+
+;;
 ;;  Magit
 ;;
 (use-package magit :ensure t)

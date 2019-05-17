@@ -1,0 +1,13 @@
+{
+  "libs": [
+    "ecma5",
+    "ecma6",
+    "jquery",
+    "react",
+    "browser"
+  ],
+  "ecmaVersion": 6,
+  "plugins": {
+    "node": {}
+  }
+}

@@ -141,6 +141,7 @@
  '(font-lock-type-face ((t (:foreground "color-36"))))
  '(font-lock-variable-name-face ((t (:foreground "color-39"))))
  '(highlight ((t (:background "color-234"))))
+ '(highlight-symbol-face ((t (:background "color-236"))))
  '(js2-external-variable ((t (:foreground "color-111"))))
  '(js2-function-call ((t (:foreground "color-172"))))
  '(js2-function-param ((t (:foreground "dodger blue"))))

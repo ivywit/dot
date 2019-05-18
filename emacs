@@ -38,9 +38,15 @@
   :load-path "ivy-configs/")
 
 ;;
-;;
+;;  PHP
 ;;
 (use-package ivy-php
+  :load-path "ivy-configs/")
+
+;;
+;;  Ruby
+;;
+(use-package ivy-ruby
   :load-path "ivy-configs/")
 
 ;;

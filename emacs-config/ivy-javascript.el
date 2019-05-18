@@ -7,6 +7,7 @@
 ;; JS2 and JSX support
 (use-package rjsx-mode
   :mode "\\.jsx?\\'"
+  :magic ".* node"
   :interpreter "javascript"
   :ensure t
   :init

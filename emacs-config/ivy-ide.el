@@ -3,6 +3,11 @@
 ;; this is a configuration file
 ;;
 ;;; Code:
+(when (memq window-system '(mac ns x))
+  (use-package exec-path-from-shell
+    :ensure t
+    :config
+    (exec-path-from-shell-initialize)))
 
 ;;
 ;;  Window Management
@@ -10,6 +15,16 @@
 (when (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (when (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(global-visual-line-mode 1)
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+(add-to-list 'default-frame-alist '(ns-appearance . dark)) ;; assuming you are using a dark theme
+(add-to-list 'default-frame-alist '(height . 44))
+(add-to-list 'default-frame-alist '(width . 120))
+(setq inhibit-startup-screen t)
+
+(defvar ns-use-proxy-icon)
+(setq ns-use-proxy-icon nil)
+(setq frame-title-format nil)
 (global-set-key (kbd "C-c <up>") 'windmove-up)
 (global-set-key (kbd "C-c <down>") 'windmove-down)
 (global-set-key (kbd "C-c <right>") 'windmove-right)
@@ -65,8 +80,14 @@
   :hook ((prog-mode . highlight-symbol-mode)
          (prog-mode . highlight-symbol-nav-mode)))
 
+(use-package minimap
+ :ensure t
+ :defer t
+ :hook (minimap-sb-mode . (lambda () (setq mode-line-format nil))))
+
 (use-package linum
   :ensure t
+  :hook (prog-mode . linum-mode)
   :config
   (defvar linum-format)
   (defvar linum-disabled-modes-list)
@@ -81,7 +102,7 @@
   ;; format line numbers
   (setq linum-format 'linum-format-func)
   ;; disable line numbers in certain modes
-  (setq linum-disabled-modes-list '(term-mode shell-mode eshell-mode wl-summary-mode compilation-mode customize-mode)))
+  (setq linum-disabled-modes-list '(term-mode shell-mode eshell-mode wl-summary-mode compilation-mode custom-mode)))
 
 ;;
 ;;  Match Parens

@@ -69,7 +69,7 @@
 ;; Use prettier to keep code clean
 (use-package prettier-js
   :ensure t
-  :hook (rjsx-mode. prettier-js-mode))
+  :hook (rjsx-mode . prettier-js-mode))
 
 (provide 'ivy-javascript)
 ;;; ivy-javascript.el ends here

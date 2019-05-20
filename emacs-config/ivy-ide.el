@@ -6,6 +6,7 @@
 (when (memq window-system '(mac ns x))
   (use-package exec-path-from-shell
     :ensure t
+    :functions exec-path-from-shell-initialize
     :config
     (exec-path-from-shell-initialize)))
 
@@ -94,7 +95,7 @@
   (defun linum-format-func (line)
     "Format LINE numbers."
     (let ((w (length (number-to-string (count-lines (point-min) (point-max))))))
-      (propertize (format (format "%%%dd  " w) line) 'face 'linum)))
+      (propertize (format (format "  %%%dd  " w) line) 'face 'linum)))
   (defun linum-on ()
     "Enable linum mode."
     (unless (or (minibufferp) (member major-mode linum-disabled-modes-list))
@@ -170,8 +171,8 @@
   :ensure t
   :after ivy
   :bind-keymap ("C-c p". projectile-command-map)
-  :defines projectile-completion-system
   :functions projectile-register-project-type
+  :defines projectile-completion-system
   :config
   (projectile-mode +1)
   (setq projectile-completion-system 'ivy)

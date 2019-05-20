@@ -78,7 +78,7 @@
  '(minimap-width-fraction 0.05)
  '(minimap-window-location (quote right))
  '(mode-line-format
-   (list " ["
+   (list "  ["
          (propertize "%p"
                      (quote face)
                      (quote font-lock-constant-face))

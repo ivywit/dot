@@ -7,10 +7,18 @@
 [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
 export TERM=xterm-256color
 
-#if command -v tmux>/dev/null; then
-#   [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-#fi
+##
+#  PROMPT
+##
+source $HOME/.zsh_prompt
+
+##
+#  EDITOR
+##
+export EDITOR='emacs'
+
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+
 ##
 #  HISTORY
 ##
@@ -24,70 +32,107 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey '\e[A' history-beginning-search-backward-end
 bindkey '\e[B' history-beginning-search-forward-end
 
-##
-#  PROMPT
-##
-source $HOME/.zsh_prompt
+nvmLazy() {
+    nvmpath=$1
+    nvmsources=(${(s: :)2})
+    nvmpossibleCommands=(${(s: :)3})
+    for command in $nvmpossibleCommands; do        
+        $command() {
+            local thisCommand="$0"
+            echo 'loading...'
+            if [[ -d $nvmpath ]]; then
+                unfunction ${nvmpossibleCommands}
+                for sourcePath in $nvmsources; do
+                    source ${sourcePath}
+                done
+                ${thisCommand} "$@"
+            else
+                echo "$thisCommand is not installed" >&2
+                return 1
+            fi
+        }
+    done
+}
 
-##
-#  EDITOR
-##
-if [[ -n $SSH_CONNECTION ]]; then
-    export EDITOR='emacs'
-else
-    export EDITOR='emacs'
-fi
+rvmLazy() {
+    rvmpath=$1
+    rvmcompletion=$2
+    rvmpossibleCommands=(${(s: :)3})
+    for command in $rvmpossibleCommands; do        
+        $command() {
+            local thisCommand="$0"
+            echo 'loading...'
+            if [[ -d $rvmpath ]]; then
+                unfunction ${rvmpossibleCommands}
+                fpath=($rvmcompletion $fpath)
+                autoload -Uz compinit && compinit -i
+                ${thisCommand} "$@"
+            else
+                echo "$thisCommand is not installed" >&2
+                return 1
+            fi
+        }
+    done
+}
 
-fpath=(~/.zsh/completion $fpath)
-autoload -Uz compinit && compinit -i
+googleLazy() {
+    googlepath=$1
+    googlesources=(${(s: :)2})
+    googlepossibleCommands=(${(s: :)3})
+    for command in $googlepossibleCommands; do        
+        $command() {
+            local thisCommand="$0"
+            echo 'loading...'
+            if [[ -d $googlepath ]]; then
+                unfunction ${googlepossibleCommands}
+                for sourcePath in $googlesources; do
+                    source ${sourcePath}
+                done
+                ${thisCommand} "$@"
+            else
+                echo "$thisCommand is not installed" >&2
+                return 1
+            fi
+        }
+    done
+}
 
 ##
 #  ALIASES
 ##
 source $HOME/.aliases
 
-system=$(uname)
-case "$system" in
-    "Darwin" )
-        alias finderhide='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
-        alias findershow='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
-
-        #export JAVA_HOME=`/usr/libexec/java_home`
-        ;;
-    "Linux" )
-        #export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
-        ;;
-esac
-
-alias sequelize="./node_modules/.bin/sequelize"
-alias irssi='TERM=screen-256color irssi'
-alias pir='TERM=screen-256color proxychains4 irssi'
-
 ##
 #  PATHS
 ##
 export MANPATH="/usr/local/man:$MANPATH" # manual path
-export GOPATH="/usr/local/opt/go/libexec"
-export SCALAPATH="/usr/local/opt/scala@2.11/bin" # scala
 export SBINPATH="/usr/local/sbin" # sbin tools
-export RVMPATH="$HOME/.rvm/bin" # RVM
-export VSCODEPATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-export PATH="$SCALAPATH:$SBINPATH:$RVMPATH:$VSCODEPATH:$PATH"
-export NVM_DIR="$HOME/.nvm" # NVM
+export PATH="$SBINPATH:$PATH"
 
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+##
+#  Node Version Manager
+##
+NVM_DIR="$HOME/.nvm" # NVM
+NVM_SOURCES="$NVM_DIR/bash_completion $NVM_DIR/nvm.sh"
+NVM_CMDS="nvm node npm"
+nvmLazy $NVM_DIR $NVM_SOURCES $NVM_CMDS
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/opt/google-cloud-sdk/path.zsh.inc' ]; then source '/opt/google-cloud-sdk/path.zsh.inc'; fi
-# The next line enables shell command completion for gcloud.
-if [ -f '/opt/google-cloud-sdk/completion.zsh.inc' ]; then source '/opt/google-cloud-sdk/completion.zsh.inc'; fi
+##
+#  Ruby Version Manager
+##
+RVM_DIR=$HOME/.rvm # RVM
+export PATH="$RVM_DIR/bin:$PATH"
+RVM_CMDS="rvm ruby irb rails"
+RVM_COMPLETION="$RVM_DIR/scripts/zsh/Completion/_rvm"
+rvmLazy $RVM_DIR $RVM_COMPLETION $RVM_CMDS
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/iv/.nvm/versions/node/v8.12.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/iv/.nvm/versions/node/v8.12.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/iv/.nvm/versions/node/v8.12.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/iv/.nvm/versions/node/v8.12.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/iv/.nvm/versions/node/v8.12.0/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/iv/.nvm/versions/node/v8.12.0/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
+# ##
+# #  Google Cloud
+# ##
+GOOGLE_DIR="/opt/google-cloud-sdk"
+GOOGLE_SOURCES="$GOOGLE_DIR/path.zsh.inc $GOOGLE_DIR/completion.zsh.inc"
+GOOGLE_CMDS="gcloud kubectl"
+googleLazy $GOOGLE_DIR $GOOGLE_SOURCES $GOOGLE_CMDS
+
+unset lazy
+autoload -Uz compinit && compinit -i

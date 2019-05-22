@@ -126,9 +126,9 @@ RVM_CMDS="rvm ruby irb rails"
 RVM_COMPLETION="$RVM_DIR/scripts/zsh/Completion/_rvm"
 rvmLazy $RVM_DIR $RVM_COMPLETION $RVM_CMDS
 
-# ##
-# #  Google Cloud
-# ##
+##
+#  Google Cloud
+##
 GOOGLE_DIR="/opt/google-cloud-sdk"
 GOOGLE_SOURCES="$GOOGLE_DIR/path.zsh.inc $GOOGLE_DIR/completion.zsh.inc"
 GOOGLE_CMDS="gcloud kubectl"
@@ -136,3 +136,12 @@ googleLazy $GOOGLE_DIR $GOOGLE_SOURCES $GOOGLE_CMDS
 
 unset lazy
 autoload -Uz compinit && compinit -i
+
+##
+#  Syntax highlighting
+##
+# export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
+# typeset -A ZSH_HIGHLIGHT_STYLES
+# ZSH_HIGHLIGHT_STYLES[alias]='fg=magenta,bold'
+# ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
+# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

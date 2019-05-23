@@ -182,5 +182,7 @@ ZSH_HIGHLIGHT_STYLES[function]='fg=222'
 ZSH_HIGHLIGHT_STYLES[builtin]='fg=174'
 ZSH_HIGHLIGHT_STYLES[alias]='fg=219'
 ZSH_HIGHLIGHT_STYLES[path]='fg=250,bold'
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=190'
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=245'
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

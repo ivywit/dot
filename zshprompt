@@ -17,8 +17,8 @@ case "$system" in
         ;;
 esac
 
-PRIMARY_F=32
-SECONDARY_F=106
+PRIMARY_F=141 #32
+SECONDARY_F=184 #106
 
 CURRENT_FG="NONE"
 

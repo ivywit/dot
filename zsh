@@ -177,8 +177,8 @@ autoload -Uz compinit && compinit -i
 ##
 export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
 typeset -A ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES[command]='fg=141'
-ZSH_HIGHLIGHT_STYLES[function]='fg=222'
+ZSH_HIGHLIGHT_STYLES[command]='fg=045' #'fg=141'
+ZSH_HIGHLIGHT_STYLES[function]='fg=214'
 ZSH_HIGHLIGHT_STYLES[builtin]='fg=174'
 ZSH_HIGHLIGHT_STYLES[alias]='fg=219'
 ZSH_HIGHLIGHT_STYLES[path]='fg=250,bold'

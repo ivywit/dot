@@ -10,7 +10,7 @@ export TERM=xterm-256color
 ##
 #  PROMPT
 ##
-source $HOME/.zsh_prompt
+source $HOME/.zsh/prompt
 
 ##
 #  EDITOR
@@ -150,13 +150,13 @@ function spectrum_bls() {
 NVM_DIR="$HOME/.nvm" # NVM
 NVM_SOURCES="$NVM_DIR/bash_completion $NVM_DIR/nvm.sh"
 NVM_CMDS="nvm node npm"
+source "$HOME/.zsh/default_nvm"
 nvmLazy $NVM_DIR $NVM_SOURCES $NVM_CMDS
 
 ##
 #  Ruby Version Manager
 ##
 RVM_DIR=$HOME/.rvm # RVM
-export PATH="$RVM_DIR/bin:$PATH"
 RVM_CMDS="rvm ruby irb rails"
 RVM_COMPLETION="$RVM_DIR/scripts/zsh/Completion/_rvm"
 rvmLazy $RVM_DIR $RVM_COMPLETION $RVM_CMDS
@@ -184,5 +184,10 @@ ZSH_HIGHLIGHT_STYLES[alias]='fg=219'
 ZSH_HIGHLIGHT_STYLES[path]='fg=250,bold'
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=190'
 ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=245'
+
+##
+#  Default Path
+##
+export PATH="$RVM_DIR/bin:$DEFAULT_NVM:$PATH"
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

@@ -9,5 +9,10 @@
   :interpreter "json"
   :ensure t)
 
+(use-package yaml-mode
+  :mode "\\.ym*l\\'"
+  :interpreter "yaml"
+  :ensure t)
+
 (provide 'ivy-configuration)
 ;;; ivy-configuration.el ends here

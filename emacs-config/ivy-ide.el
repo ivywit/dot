@@ -157,6 +157,25 @@
   :config (global-flycheck-mode))
 
 ;;
+;;  Prescient
+;;
+(use-package prescient
+  :ensure t
+  :config
+  (prescient-persist-mode 1))
+
+(use-package ivy-prescient
+  :ensure t
+  :config
+  (ivy-prescient-mode 1))
+
+(use-package company-prescient
+  :ensure t
+  :config
+  (company-prescient-mode 1))
+
+
+;;
 ;;  Ivy
 ;;
 (use-package ivy

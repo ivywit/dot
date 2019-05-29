@@ -186,6 +186,11 @@ ZSH_HIGHLIGHT_STYLES[globbing]='fg=190'
 ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=245'
 
 ##
+#  FASD
+##
+eval "$(fasd --init auto)"
+
+##
 #  Default Path
 ##
 export PATH="$RVM_DIR/bin:$DEFAULT_NVM:$PATH"

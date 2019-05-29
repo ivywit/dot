@@ -135,10 +135,10 @@
 (use-package hideshow
   :ensure t
   :bind
-  (("C-c C-s" . hs-show-block)
-   ("C-c C-h" . hs-hide-block)
-   ("C-c C-M-h" . hs-hide-all)
-   ("C-c C-M-s" . hs-show-all))
+  (("C-c ." . hs-show-block)
+   ("C-c ," . hs-hide-block)
+   ("C-c M-," . hs-hide-all)
+   ("C-c M-." . hs-show-all))
   :hook (prog-mode . hs-minor-mode))
 
 ;;
@@ -161,16 +161,19 @@
 ;;
 (use-package prescient
   :ensure t
+  :functions prescient-persist-mode
   :config
   (prescient-persist-mode 1))
 
 (use-package ivy-prescient
   :ensure t
+  :defines ivy-prescient-mode
   :config
   (ivy-prescient-mode 1))
 
 (use-package company-prescient
   :ensure t
+  :defines company-prescient-mode
   :config
   (company-prescient-mode 1))
 
@@ -180,6 +183,7 @@
 ;;
 (use-package ivy
   :ensure t
+  :functions ivy-mode
   :config
   (ivy-mode 1))
 
@@ -211,6 +215,10 @@
 ;;  Magit
 ;;
 (use-package magit :ensure t)
+
+(use-package forge
+  :ensure t
+  :after magit)
 
 (provide 'ivy-ide)
 ;;; ivy-ide.el ends here

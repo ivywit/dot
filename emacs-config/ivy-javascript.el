@@ -4,72 +4,66 @@
 ;;
 ;;; Code:
 
-;; JS2 and JSX support
-(use-package rjsx-mode
-  :mode "\\.jsx?\\'"
-  :magic ".* node"
-  :interpreter "javascript"
-  :ensure t
-  :init
+(defun setup-js ()
+  "Setup basic js stuff."
   (defvar js-basic-indent)
   (defvar js-indent-level)
   (defvar flycheck-select-checker)
   (setq flycheck-select-checker "javascript-eslint")
   (setq js-basic-indent 2)
-  (setq js-indent-level 2)
-  (setq-default js2-basic-indent 2
-                js2-basic-offset 2
-                js2-auto-indent-p t
-                js2-cleanup-whitespace t
-                js2-enter-indents-newline t
-                js2-indent-on-enter-key t
-                js2-strict-missing-semi-warning nil
-                js2-missing-semi-one-line-override t
-                js2-global-externs (list "window" "module" "require" "buster" "sinon" "assert" "refute" "setTimeout" "clearTimeout" "setInterval" "clearInterval" "location" "__dirname" "console" "JSON" "jQuery" "$")))
+  (setq js-indent-level 2))
 
-;; JS Autocomplete and correct
-(use-package tern
-  :defer t
+(defun setup-tide ()
+  "Setup tide functionality."
+  (interactive)
+  (defvar flycheck-check-syntax-automatically)
+  (tide-setup)
+  (flycheck-mode +1)
+  (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  (eldoc-mode +1)
+  (tide-hl-identifier-mode +1)
+  ;; company is an optional dependency. You have to
+  ;; install it separately via package-install
+  ;; `M-x package-install [ret] company`
+  (company-mode +1))
+
+(add-hook 'js-mode-hook (setup-js))
+(add-hook 'typescript-mode-hook (setup-js))
+
+;; JS mode extension with js2
+(use-package js2-mode
   :ensure t
-  :hook (rjsx-mode . tern-mode)
+  :hook (js-mode . js2-minor-mode))
+
+;; TS support
+(use-package typescript-mode
+  :mode "\\.tsx?\\'"
+  :ensure t
   :config
-  (setq tern-command (append tern-command '("--no-port-file"))))
+  (setq-default typescript-indent-level 2))
 
-(use-package company-tern
-  :after (company tern)
-  :ensure t
-  :config
-  (add-to-list 'company-backends 'company-tern))
-
-;; JS Refactoring
-(use-package js2-refactor
-  :ensure t
-  :hook (rjsx-mode . js2-refactor-mode)
-  :init
-  (js2r-add-keybindings-with-prefix "C-c C-f"))
-
-;; JS referece definition
-(use-package xref-js2
-  :ensure t
-  :hook (rjsx-mode . (lambda ()
-		      (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
-  :config
-  (define-key js-mode-map (kbd "M-.") nil))
 
 ;; JS interpreter and debugger
 (use-package indium
   :ensure t
-  :hook (rjsx-mode . indium-interaction-mode))
+  :hook ((js-mode typescript-mode) . indium-interaction-mode))
+
+(use-package tide
+  :ensure t
+  :after (company flycheck)
+  :hook (((js-mode typescript-mode) . setup-tide)
+         ((js-mode typescript-mode) . tide-hl-identifier-mode)
+         (before-save . tide-format-before-save)))
 
 ;; add node modules to path
 (use-package add-node-modules-path
   :ensure t
-  :hook (rjsx-mode))
+  :hook (js-mode typescript-mode))
 
 ;; Use prettier to keep code clean
 (use-package prettier-js
   :ensure t
-  :hook (rjsx-mode . prettier-js-mode))
+  :hook ((js-mode typescript-mode) . prettier-js-mode))
 
 (provide 'ivy-javascript)
 ;;; ivy-javascript.el ends here

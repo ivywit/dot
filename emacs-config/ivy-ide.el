@@ -220,5 +220,6 @@
   :ensure t
   :after magit)
 
+
 (provide 'ivy-ide)
 ;;; ivy-ide.el ends here

@@ -53,7 +53,14 @@
 ;;  Config Files
 ;;
 (use-package ivy-configuration
-  :load-path "ivy-configs")
+  :load-path "ivy-configs"
+  )
+
+;;
+;;  GraphQL
+;;
+(use-package ivy-graphql
+  :load-path "ivy-configs/")
 
 ;;
 ;;  Text Files
@@ -69,73 +76,50 @@
  '(company-minimum-prefix-length 2)
  '(fringe-mode 0 nil (fringe))
  '(global-company-mode t)
+ '(global-flycheck-mode t)
  '(global-hl-line-mode t)
  '(global-linum-mode t)
  '(global-visual-line-mode t)
  '(js2-missing-semi-one-line-override t)
  '(js2-strict-missing-semi-warning nil)
- '(linum-format (quote linum-format-func))
+ '(linum-format 'linum-format-func)
  '(minimap-width-fraction 0.05)
- '(minimap-window-location (quote right))
+ '(minimap-window-location 'right)
  '(mode-line-format
    (list "  ["
-         (propertize "%p"
-                     (quote face)
-                     (quote font-lock-constant-face))
+         (propertize "%p" 'face 'font-lock-constant-face)
          "/"
-         (propertize "%I"
-                     (quote face)
-                     (quote font-lock-constant-face))
+         (propertize "%I" 'face 'font-lock-constant-face)
          "] " " ("
-         (propertize "%02l"
-                     (quote face)
-                     (quote font-lock-keyword-face))
+         (propertize "%02l" 'face 'font-lock-keyword-face)
          ":"
-         (propertize "%02c"
-                     (quote face)
-                     (quote font-lock-keyword-face))
+         (propertize "%02c" 'face 'font-lock-keyword-face)
          ") "
-         (quote
-          (:eval
+         '(:eval
            (propertize
             (substring vc-mode 5)
-            (quote face)
-            (quote font-lock-comment-face))))
-         (quote
-          (:eval
-           (propertize "   %b "
-                       (quote face)
+            'face 'font-lock-comment-face))
+         '(:eval
+           (propertize "   %b " 'face
                        (let
                            ((face
                              (buffer-modified-p)))
-                         (if face
-                             (quote font-lock-warning-face)
-                           (quote font-lock-type-face)))
-                       (quote help-echo)
-                       (buffer-file-name))))
-         (quote
-          (:eval
-           (propertize " "
-                       (quote display)
-                       (\`
-                        ((space :align-to
+                         (if face 'font-lock-warning-face 'font-lock-type-face))
+                       'help-echo
+                       (buffer-file-name)))
+         '(:eval
+           (propertize " " 'display
+                       `((space :align-to
                                 (-
                                  (+ right right-fringe right-margin)
-                                 (\,
-                                  (+ 10
-                                     (string-width mode-name))))))))))
-         (propertize " %m "
-                     (quote face)
-                     (quote font-lock-string-face))
-         (quote
-          (:eval
+                                 ,(+ 10
+                                     (string-width mode-name)))))))
+         (propertize " %m " 'face 'font-lock-string-face)
+         '(:eval
            (propertize
             (format-time-string " %H:%M ")
-            (quote face)
-            (quote font-lock-builtin-face))))))
- '(package-selected-packages
-   (quote
-    (company-tern js2-mode flycheck company use-package)))
+            'face 'font-lock-builtin-face))))
+ '(package-selected-packages '(company-tern js2-mode flycheck company use-package))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -157,6 +141,8 @@
  '(custom-button-pressed ((t (:background "steelblue" :foreground "black" :box (:line-width 2 :style pressed-button)))))
  '(custom-variable-tag ((t (:foreground "RoyalBlue1" :weight bold))))
  '(error ((t (:foreground "tomato1" :weight bold))))
+ '(flycheck-error-list-info ((t (:inherit coral))))
+ '(flycheck-info ((t (:inherit warning :underline t))))
  '(font-lock-builtin-face ((t (:foreground "RoyalBlue1"))))
  '(font-lock-comment-face ((t (:foreground "grey40"))))
  '(font-lock-constant-face ((t (:foreground "goldenrod1"))))
@@ -178,8 +164,8 @@
  '(menu ((t (:background "color-233" :foreground "dodger blue"))))
  '(minibuffer-prompt ((t (:foreground "dodger blue"))))
  '(minimap-active-region-background ((t (:background "grey20"))))
- '(mode-line ((t (:background "gray20" :foreground "dodger blue" :box (:line-width 2 :color "grey20")))))
- '(mode-line-inactive ((t (:inherit mode-line :background "grey10" :foreground "SlateBlue3" :box (:line-width 2 :color "grey10") :weight light))))
+ '(mode-line ((t (:background "gray10" :foreground "dodger blue" :box (:line-width 2 :color "grey10")))))
+ '(mode-line-inactive ((t (:inherit mode-line :background "grey30" :foreground "SlateBlue3" :box (:line-width 2 :color "grey30") :weight light))))
  '(region ((t (:background "mediumpurple4"))))
  '(rjsx-attr ((t (:inherit font-lock-preprocessor-face))))
  '(rjsx-tag ((t (:inherit font-lock-type-face))))

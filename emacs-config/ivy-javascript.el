@@ -4,14 +4,11 @@
 ;;
 ;;; Code:
 
-(defun setup-js ()
-  "Setup basic js stuff."
-  (defvar js-basic-indent)
-  (defvar js-indent-level)
-  (defvar flycheck-select-checker)
-  (setq flycheck-select-checker "javascript-eslint")
-  (setq js-basic-indent 2)
-  (setq js-indent-level 2))
+;; Setup basic js stuff.
+(defvar js-basic-indent)
+(defvar js-indent-level)
+(setq js-basic-indent 2)
+(setq js-indent-level 2)
 
 (defun setup-tide ()
   "Setup tide functionality."
@@ -26,9 +23,6 @@
   ;; install it separately via package-install
   ;; `M-x package-install [ret] company`
   (company-mode +1))
-
-(add-hook 'js-mode-hook (setup-js))
-(add-hook 'typescript-mode-hook (setup-js))
 
 ;; JS mode extension with js2
 (use-package js2-mode

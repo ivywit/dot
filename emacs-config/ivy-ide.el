@@ -119,15 +119,10 @@
 ;; Tramp
 ;;
 (use-package tramp
-  :ensure t
+  :defer t
   :config
-  (setenv "ESHELL" "/bin/sh") ; fix shell
   (defvar docker-tramp-use-names)
-  (setq docker-tramp-use-names 1) ; tramp access docker container by name
-  (add-to-list 'tramp-default-proxies-alist
-               '(nil "\\`root\\'" "/ssh:%h:"))
-  (add-to-list 'tramp-default-proxies-alist
-               '((regexp-quote (system-name)) nil nil)))
+  (setq docker-tramp-use-names 1)) ; tramp access docker container by name
 
 ;;
 ;; HideShow

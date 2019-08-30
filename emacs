@@ -53,8 +53,7 @@
 ;;  Config Files
 ;;
 (use-package ivy-configuration
-  :load-path "ivy-configs"
-  )
+  :load-path "ivy-configs")
 
 ;;
 ;;  GraphQL
@@ -96,9 +95,10 @@
          (propertize "%02c" 'face 'font-lock-keyword-face)
          ") "
          '(:eval
-           (propertize
-            (substring vc-mode 5)
-            'face 'font-lock-comment-face))
+           (when vc-mode
+             (propertize
+              (substring vc-mode 5)
+              'face 'font-lock-comment-face)))
          '(:eval
            (propertize "   %b " 'face
                        (let
@@ -114,12 +114,14 @@
                                  (+ right right-fringe right-margin)
                                  ,(+ 10
                                      (string-width mode-name)))))))
-         (propertize " %m " 'face 'font-lock-string-face)
+         `(:eval
+           (propertize mode-name 'face 'font-lock-string-face))
          '(:eval
            (propertize
             (format-time-string " %H:%M ")
             'face 'font-lock-builtin-face))))
- '(package-selected-packages '(company-tern js2-mode flycheck company use-package))
+ '(package-selected-packages
+   '(tramp-term tramp-theme docker-tramp company-tern js2-mode flycheck company use-package))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

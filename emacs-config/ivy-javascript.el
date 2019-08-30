@@ -25,9 +25,9 @@
   (company-mode +1))
 
 ;; JS mode extension with js2
-(use-package js2-mode
-  :ensure t
-  :hook (js-mode . js2-minor-mode))
+;; (use-package js2-mode
+;;   :ensure t
+;;   :hook (js-mode . (js2-minor-mode)))
 
 ;; TS support
 (use-package typescript-mode

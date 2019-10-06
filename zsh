@@ -54,49 +54,6 @@ nvmLazy() {
     done
 }
 
-rvmLazy() {
-    rvmpath=$1
-    rvmcompletion=$2
-    rvmpossibleCommands=(${(s: :)3})
-    for command in $rvmpossibleCommands; do        
-        $command() {
-            local thisCommand="$0"
-            echo 'loading...'
-            if [[ -d $rvmpath ]]; then
-                unfunction ${rvmpossibleCommands}
-                fpath=($rvmcompletion $fpath)
-                autoload -Uz compinit && compinit -i
-                ${thisCommand} "$@"
-            else
-                echo "$thisCommand is not installed" >&2
-                return 1
-            fi
-        }
-    done
-}
-
-googleLazy() {
-    googlepath=$1
-    googlesources=(${(s: :)2})
-    googlepossibleCommands=(${(s: :)3})
-    for command in $googlepossibleCommands; do        
-        $command() {
-            local thisCommand="$0"
-            echo 'loading...'
-            if [[ -d $googlepath ]]; then
-                unfunction ${googlepossibleCommands}
-                for sourcePath in $googlesources; do
-                    source ${sourcePath}
-                done
-                ${thisCommand} "$@"
-            else
-                echo "$thisCommand is not installed" >&2
-                return 1
-            fi
-        }
-    done
-}
-
 ##
 #  ALIASES
 ##
@@ -157,17 +114,18 @@ nvmLazy $NVM_DIR $NVM_SOURCES $NVM_CMDS
 #  Ruby Version Manager
 ##
 RVM_DIR=$HOME/.rvm # RVM
-RVM_CMDS="rvm ruby irb rails"
-RVM_COMPLETION="$RVM_DIR/scripts/zsh/Completion/_rvm"
-rvmLazy $RVM_DIR $RVM_COMPLETION $RVM_CMDS
+# RVM_CMDS="rvm ruby irb rails"
+#RVM_COMPLETION="$RVM_DIR/scripts/zsh/Completion/_rvm"
+#rvmLazy $RVM_DIR $RVM_COMPLETION $RVM_CMDS
+source "$RVM_DIR/scripts/rvm"
 
 ##
 #  Google Cloud
 ##
-GOOGLE_DIR="/opt/google-cloud-sdk"
-GOOGLE_SOURCES="$GOOGLE_DIR/path.zsh.inc $GOOGLE_DIR/completion.zsh.inc"
-GOOGLE_CMDS="gcloud kubectl"
-googleLazy $GOOGLE_DIR $GOOGLE_SOURCES $GOOGLE_CMDS
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ivy/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ivy/google-cloud-sdk/path.zsh.inc'; fi
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ivy/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ivy/google-cloud-sdk/completion.zsh.inc'; fi
 
 unset lazy
 autoload -Uz compinit && compinit -i
@@ -196,3 +154,4 @@ eval "$(fasd --init auto)"
 export PATH="$RVM_DIR/bin:$DEFAULT_NVM:$PATH"
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+

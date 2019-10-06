@@ -137,21 +137,6 @@
   :hook (prog-mode . hs-minor-mode))
 
 ;;
-;;  Company Mode
-;;
-(use-package company
-  :ensure t
-  :init (global-company-mode)
-  :config (setq company-minimum-prefix-length 2))
-
-;;
-;;  Fly Check
-;;
-(use-package flycheck
-  :ensure t
-  :config (global-flycheck-mode))
-
-;;
 ;;  Prescient
 ;;
 (use-package prescient
@@ -215,6 +200,43 @@
   :ensure t
   :after magit)
 
+;;
+;;  Company Mode
+;;
+(use-package company
+  :ensure t
+  :init (global-company-mode)
+  :config (setq company-minimum-prefix-length 2))
+
+;;
+;;  Fly Check
+;;
+(use-package flycheck
+  :ensure t
+  :hook ((js-mode typescript-mode ruby-mode php-mode) . flycheck-mode))
+
+;;
+;; LSP
+;;
+(use-package lsp-mode
+  :ensure t
+  :hook ((js-mode typescript-mode ruby-mode php-mode) . lsp))
+
+(use-package lsp-ui
+  :ensure t
+  :commands lsp-ui-mode
+  :hook (lsp-mode . lsp-ui-mode))
+
+(use-package company-lsp
+  :ensure t
+  :commands company-lsp)
+
+;;
+;; DAP debugging
+;;
+(use-package dap-mode
+  :ensure t)
+;; (use-package dap-LANGUAGE) to load the dap adapter for your language
 
 (provide 'ivy-ide)
 ;;; ivy-ide.el ends here

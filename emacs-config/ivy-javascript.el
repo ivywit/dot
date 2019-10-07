@@ -18,6 +18,11 @@
   (setq-default typescript-indent-level 2))
 
 
+;; ESLint fix
+(use-package eslint-fix
+  :ensure t
+  :hook ((js-mode typescript-mode) . (lambda() (add-hook 'after-save-hook 'eslint-fix))))
+
 ;; JS interpreter and debugger
 (use-package indium
   :ensure t

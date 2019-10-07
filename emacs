@@ -67,6 +67,15 @@
 (use-package ivy-text
   :load-path "ivy-configs")
 
+(defun mode-check (mode-name)
+  "Check to eval MODE-NAME if a cons."
+  (if (consp mode-name)
+      (car mode-name)
+      ;;(mapconcat (lambda (x) (if (stringp x) (format 'x) (format x))) mode-name " ")
+    (format mode-name)))
+
+;;(message "%s" (mode-check `(,"JavaScript" (:eval (js--syntactic-mode-name-part)))))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -113,9 +122,9 @@
                                 (-
                                  (+ right right-fringe right-margin)
                                  ,(+ 10
-                                     (string-width mode-name)))))))
+                                     (string-width (mode-check mode-name))))))))
          `(:eval
-           (propertize mode-name 'face 'font-lock-string-face))
+           (propertize (mode-check mode-name) 'face 'font-lock-string-face))
          '(:eval
            (propertize
             (format-time-string " %H:%M ")

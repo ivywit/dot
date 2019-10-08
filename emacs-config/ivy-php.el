@@ -3,21 +3,21 @@
 ;; this is a configuration file
 ;;
 ;;; Code:
-(use-package phpactor
-  :ensure t)
+;; (use-package phpactor
+;;   :ensure t)
 
-(use-package company-phpactor
-  :ensure t)
+;; (use-package company-phpactor
+;;   :ensure t)
 
 (use-package php-mode
   :mode "\\.php\\'"
   :interpreter "php"
   :ensure t
-  :defines company-backends
-  :hook ((php-mode . (lambda () (set (make-local-variable 'company-backends)
-                                     '(;; list of backends
-                                       company-phpactor
-                                       company-files))))))
+  :defines company-backends)
+  ;; :hook ((php-mode . (lambda () (set (make-local-variable 'company-backends)
+  ;;                                    '(;; list of backends
+  ;;                                      company-phpactor
+  ;;                                      company-files))))))
 
 (use-package web-mode
   :mode ("\\.html?\\'" "\\.phtml\\'" "\\.tpl\\.php\\'" "\\.html\\.twig\\'" "\\.html\\.php\\'")

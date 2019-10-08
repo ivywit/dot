@@ -70,11 +70,11 @@
 (defun mode-check (mode-name)
   "Check to eval MODE-NAME if a cons."
   (if (consp mode-name)
-      (car mode-name)
+      (capitalize (car mode-name))
       ;;(mapconcat (lambda (x) (if (stringp x) (format 'x) (format x))) mode-name " ")
-    (format mode-name)))
+    (capitalize mode-name)))
 
-;;(message "%s" (mode-check `(,"JavaScript" (:eval (js--syntactic-mode-name-part)))))
+;;(message "%s" (mode-check `(,"javaScript" (:eval (js--syntactic-mode-name-part)))))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

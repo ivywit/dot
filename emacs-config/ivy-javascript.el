@@ -11,27 +11,23 @@
 (setq js-indent-level 2)
 
 ;; TS support
-(use-package typescript-mode
-  :mode "\\.tsx?\\'"
-  :ensure t
-  :config
-  (setq-default typescript-indent-level 2))
-
+(use-package js-mode
+  :mode "\\.[jt]sx?\\'")
 
 ;; ESLint fix
 (use-package eslint-fix
   :ensure t
-  :hook ((js-mode typescript-mode) . (lambda() (add-hook 'after-save-hook 'eslint-fix))))
+  :hook ((js-mode) . (lambda() (add-hook 'after-save-hook 'eslint-fix))))
 
 ;; JS interpreter and debugger
 (use-package indium
   :ensure t
-  :hook ((js-mode typescript-mode) . indium-interaction-mode))
+  :hook ((js-mode) . indium-interaction-mode))
 
 ;; add node modules to path
 (use-package add-node-modules-path
   :ensure t
-  :hook (js-mode typescript-mode))
+  :hook (js-mode))
 
 (provide 'ivy-javascript)
 ;;; ivy-javascript.el ends here

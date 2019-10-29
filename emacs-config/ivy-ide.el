@@ -75,7 +75,9 @@
 ;;  Line Numbers and Highlight
 ;;
 (use-package hl-line :ensure t)
-
+(use-package hl-todo
+  :ensure t
+  :init (global-hl-todo-mode))
 (use-package highlight-symbol
   :ensure t
   :hook ((prog-mode . highlight-symbol-mode)
@@ -135,108 +137,6 @@
    ("C-c M-," . hs-hide-all)
    ("C-c M-." . hs-show-all))
   :hook (prog-mode . hs-minor-mode))
-
-;;
-;;  Prescient
-;;
-(use-package prescient
-  :ensure t
-  :functions prescient-persist-mode
-  :config
-  (prescient-persist-mode 1))
-
-(use-package ivy-prescient
-  :ensure t
-  :defines ivy-prescient-mode
-  :config
-  (ivy-prescient-mode 1))
-
-(use-package company-prescient
-  :ensure t
-  :defines company-prescient-mode
-  :config
-  (company-prescient-mode 1))
-
-
-;;
-;;  Ivy
-;;
-(use-package ivy
-  :ensure t
-  :functions ivy-mode
-  :config
-  (ivy-mode 1))
-
-;;
-;;  Projectile
-;;
-(use-package projectile
-  :ensure t
-  :after ivy
-  :bind-keymap ("C-c p". projectile-command-map)
-  :functions projectile-register-project-type
-  :defines projectile-completion-system
-  :config
-  (projectile-mode +1)
-  (setq projectile-completion-system 'ivy)
-  (projectile-register-project-type 'javascript '("package.json")
-                                    :compile "npm install"
-                                    :test "npm test"
-                                    :run "npm start"
-                                    :test-suffix ".spec"))
-
-;;
-;;  Ag Search
-;;
-(use-package ag
-  :ensure t)
-
-;;
-;;  Magit
-;;
-(use-package magit :ensure t)
-
-(use-package forge
-  :ensure t
-  :after magit)
-
-;;
-;;  Company Mode
-;;
-(use-package company
-  :ensure t
-  :init (global-company-mode)
-  :config (setq company-minimum-prefix-length 2))
-
-;;
-;;  Fly Check
-;;
-(use-package flycheck
-  :ensure t
-  :hook ((js-mode typescript-mode ruby-mode php-mode) . flycheck-mode))
-
-;;
-;; LSP
-;;
-(use-package lsp-mode
-  :ensure t
-  :hook ((js-mode typescript-mode ruby-mode php-mode) . lsp))
-
-(use-package lsp-ui
-  :ensure t
-  :commands lsp-ui-mode
-  :hook (lsp-mode . lsp-ui-mode))
-
-(use-package company-lsp
-  :ensure t
-  :commands company-lsp)
-
-;;
-;; DAP debugging
-;;
-(use-package dap-mode
-  :ensure t)
-;; (use-package dap-LANGUAGE) to load the dap adapter for your language
 
 (provide 'ivy-ide)
 ;;; ivy-ide.el ends here

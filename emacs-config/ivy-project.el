@@ -80,12 +80,6 @@
   :commands company-lsp)
 
 ;;
-;; DAP debugging
-;;
-(use-package dap-mode :ensure t)
-;; (use-package dap-LANGUAGE) to load the dap adapter for your language
-
-;;
 ;;  Projectile
 ;;
 (use-package projectile

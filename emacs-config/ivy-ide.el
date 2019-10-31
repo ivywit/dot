@@ -3,12 +3,24 @@
 ;; this is a configuration file
 ;;
 ;;; Code:
+(require 'mouse)
+(require 'rotate)
+(require 'hl-line)
+(require 'hl-todo)
+(require 'highlight-symbol)
+(require 'linum)
+(require 'paren)
+(require 'tramp)
+(require 'hideshow)
 (when (memq window-system '(mac ns x))
-  (use-package exec-path-from-shell
-    :ensure t
-    :functions exec-path-from-shell-initialize
-    :config
-    (exec-path-from-shell-initialize)))
+  (require 'exec-path-from-shell)
+  (exec-path-from-shell-initialize))
+
+(defvar ns-use-proxy-icon)
+(defvar mouse-sel-mode)
+(defvar linum-format)
+(defvar linum-disabled-modes-list)
+(defvar docker-tramp-use-names)
 
 ;;
 ;;  Window Management
@@ -23,14 +35,12 @@
 (add-to-list 'default-frame-alist '(width . 120))
 (setq inhibit-startup-screen t)
 
-(defvar ns-use-proxy-icon)
 (setq ns-use-proxy-icon nil)
 (setq frame-title-format nil)
 (global-set-key (kbd "C-c <up>") 'windmove-up)
 (global-set-key (kbd "C-c <down>") 'windmove-down)
 (global-set-key (kbd "C-c <right>") 'windmove-right)
 (global-set-key (kbd "C-c <left>") 'windmove-left)
-(use-package rotate :ensure t)
 
 ;;
 ;;  Backups and Autosave
@@ -57,86 +67,61 @@
 ;;
 ;; Mouse Support
 ;;
-(use-package mouse
-  :config
-  (xterm-mouse-mode t)
-  (global-set-key [mouse-4] '(lambda ()
-                               (interactive)
-                               (scroll-down 1)))
-  (global-set-key [mouse-5] '(lambda ()
-                               (interactive)
-                               (scroll-up 1)))
-  (defvar mouse-sel-mode)
-  (setq mouse-sel-mode t)
-  ;; smooth scrolling
-  (setq scroll-step 1))
+(xterm-mouse-mode t)
+(global-set-key [mouse-4] '(lambda ()
+                             (interactive)
+                             (scroll-down 1)))
+(global-set-key [mouse-5] '(lambda ()
+                             (interactive)
+                             (scroll-up 1)))
+
+(setq mouse-sel-mode t)
+(setq scroll-step 1) ; smooth scrolling
+
 
 ;;
 ;;  Line Numbers and Highlight
 ;;
-(use-package hl-line :ensure t)
-(use-package hl-todo
-  :ensure t
-  :init (global-hl-todo-mode))
-(use-package highlight-symbol
-  :ensure t
-  :hook ((prog-mode . highlight-symbol-mode)
-         (prog-mode . highlight-symbol-nav-mode)))
+(global-hl-todo-mode)
+(add-hook 'prog-mode-hook 'highlight-symbol-mode)
+(add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
 
-(use-package minimap
- :ensure t
- :defer t
- :hook (minimap-sb-mode . (lambda () (setq mode-line-format nil))))
 
-(use-package linum
-  :ensure t
-  :hook (prog-mode . linum-mode)
-  :config
-  (defvar linum-format)
-  (defvar linum-disabled-modes-list)
-  (defun linum-format-func (line)
-    "Format LINE numbers."
-    (let ((w (length (number-to-string (count-lines (point-min) (point-max))))))
-      (propertize (format (format "  %%%dd  " w) line) 'face 'linum)))
-  (defun linum-on ()
-    "Enable linum mode."
-    (unless (or (minibufferp) (member major-mode linum-disabled-modes-list))
-      (linum-mode 1)))
-  ;; format line numbers
-  (setq linum-format 'linum-format-func)
-  ;; disable line numbers in certain modes
-  (setq linum-disabled-modes-list '(term-mode shell-mode eshell-mode wl-summary-mode compilation-mode custom-mode)))
+(add-hook 'prog-mode-hook 'linum-mode)
+(defun linum-format-func (line)
+  "Format LINE numbers."
+  (let ((w (length (number-to-string (count-lines (point-min) (point-max))))))
+    (propertize (format (format "  %%%dd  " w) line) 'face 'linum)))
+(defun linum-on ()
+  "Enable linum mode."
+  (unless (or (minibufferp) (member major-mode linum-disabled-modes-list))
+    (linum-mode 1)))
+;; format line numbers
+(setq linum-format 'linum-format-func)
+;; disable line numbers in certain modes
+(setq linum-disabled-modes-list '(term-mode shell-mode eshell-mode wl-summary-mode compilation-mode custom-mode))
 
 ;;
 ;;  Match Parens
 ;;
-(use-package paren
-  :ensure t
-  :init
-  (show-paren-mode 1)
-  (set-face-background 'show-paren-match "color-237")
-  (set-face-foreground 'show-paren-match "#def")
-  (set-face-attribute 'show-paren-match nil :weight 'extra-bold))
+(show-paren-mode 1)
+(set-face-background 'show-paren-match "color-237")
+(set-face-foreground 'show-paren-match "#def")
+(set-face-attribute 'show-paren-match nil :weight 'extra-bold)
+
 ;;
 ;; Tramp
 ;;
-(use-package tramp
-  :defer t
-  :config
-  (defvar docker-tramp-use-names)
-  (setq docker-tramp-use-names 1)) ; tramp access docker container by name
+(setq docker-tramp-use-names 1) ; tramp access docker container by name
 
 ;;
 ;; HideShow
 ;;
-(use-package hideshow
-  :ensure t
-  :bind
-  (("C-c ." . hs-show-block)
-   ("C-c ," . hs-hide-block)
-   ("C-c M-," . hs-hide-all)
-   ("C-c M-." . hs-show-all))
-  :hook (prog-mode . hs-minor-mode))
+(global-set-key (kbd "C-c .") 'hs-show-block)
+(global-set-key (kbd "C-c ,") 'hs-hide-block)
+(global-set-key (kbd "C-c M-.") 'hs-show-all)
+(global-set-key (kbd "C-c M-,") 'hs-hide-all)
+(add-hook 'prog-mode-hook 'hs-minor-mode)
 
 (provide 'ivy-ide)
 ;;; ivy-ide.el ends here

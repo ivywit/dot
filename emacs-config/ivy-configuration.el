@@ -4,15 +4,8 @@
 ;;
 ;;; Code:
 
-(use-package json-mode
-  :mode "\\.json\\'"
-  :interpreter "json"
-  :ensure t)
-
-(use-package yaml-mode
-  :mode "\\.ym*l\\'"
-  :interpreter "yaml"
-  :ensure t)
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.ym*l\\'" . ymal-mode))
 
 (provide 'ivy-configuration)
 ;;; ivy-configuration.el ends here

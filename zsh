@@ -57,7 +57,7 @@ nvmLazy() {
 ##
 #  ALIASES
 ##
-source $HOME/.aliases
+source $HOME/.zsh/aliases
 
 ##
 #  PATHS

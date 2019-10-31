@@ -4,24 +4,21 @@
 ;;
 ;;; Code:
 
-(use-package robe
-  :ensure t
-  :hook (ruby-mode . robe-mode)
-  :config
+(defun setup-ruby ()
+  "Setup ruby packages."
+  (require 'projectile-rails)
+  (require 'inf-ruby)
+  (require 'robe)
+  (require 'rvm)
   (defadvice inf-ruby-console-auto
       (before activate-rvm-for-robe activate)
-    (rvm-activate-corresponding-ruby)))
+    "."
+    (rvm-activate-corresponding-ruby))
+  (lsp)
+  (robe-mode)
+  (projectile-rails-mode))
 
-(use-package projectile-rails
-  :ensure t
-  :hook (ruby-mode . projectile-rails-mode))
-
-(use-package inf-ruby
-  :ensure t
-  :defer t)
-
-(use-package rvm
-  :ensure t)
+(add-hook 'ruby-mode-hook 'setup-ruby)
 
 (provide 'ivy-ruby)
 ;;; ivy-ruby.el ends here

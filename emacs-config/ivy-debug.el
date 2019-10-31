@@ -7,18 +7,15 @@
 ;;
 ;; DAP debugging
 ;;
-(use-package dap-mode
-  :ensure t
-  :config
-  (dap-mode 1)
-  (dap-ui-mode 1)
-  (dap-tooltip-mode 1)
-  (tooltip-mode 1))
-;; (use-package dap-LANGUAGE) to load the dap adapter for your language
-(use-package dap-firefox)
-(use-package dap-node)
-(use-package dap-php)
+(require 'dap-mode)
+(require 'dap-firefox)
+(require 'dap-node)
+;; (require 'dap-php)
 
+(dap-mode 1)
+(dap-ui-mode 1)
+(dap-tooltip-mode 1)
+(tooltip-mode 1)
 
 (provide 'ivy-debug)
 ;;; ivy-debug.el ends here

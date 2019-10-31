@@ -3,31 +3,28 @@
 ;; this is a configuration file
 ;;
 ;;; Code:
-;; (use-package phpactor
-;;   :ensure t)
+;; (require 'phpactor)
+;; (require 'company-phpactor)
+(require 'php-mode)
+(require 'web-mode)
 
-;; (use-package company-phpactor
-;;   :ensure t)
-
-(use-package php-mode
-  :mode "\\.php\\'"
-  :interpreter "php"
-  :ensure t
-  :defines company-backends)
+(add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
   ;; :hook ((php-mode . (lambda () (set (make-local-variable 'company-backends)
   ;;                                    '(;; list of backends
   ;;                                      company-phpactor
   ;;                                      company-files))))))
 
-(use-package web-mode
-  :mode ("\\.html?\\'" "\\.phtml\\'" "\\.tpl\\.php\\'" "\\.html\\.twig\\'" "\\.html\\.php\\'")
-  :ensure t
-  :config
-  (setq web-mode-script-padding 2)
-  (setq web-mode-style-padding 2)
-  (setq web-mode-markup-indent-offset 4)
-  (setq web-mode-css-indent-offset 2)
-  (setq web-mode-code-indent-offset 2))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\.twig\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\.php\\'" . web-mode))
+(setq web-mode-script-padding 2)
+(setq web-mode-style-padding 2)
+(setq web-mode-markup-indent-offset 4)
+(setq web-mode-css-indent-offset 2)
+(setq web-mode-code-indent-offset 2)
+(add-hook 'php-mode-hook 'lsp)
 
 (provide 'ivy-php)
 ;;; ivy-php.el ends here

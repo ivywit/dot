@@ -4,9 +4,9 @@
 ;;
 ;;; Code:
 
-(use-package markdown-mode
-  :mode ("\\.md\\'" "README*\\'")
-  :ensure t)
+(require 'markdown-mode)
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.README\\'" . markdown-mode))
 
 (provide 'ivy-text)
 ;;; ivy-text.el ends here

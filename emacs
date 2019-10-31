@@ -3,96 +3,31 @@
 ;; this is a configuration file
 ;;
 ;;; Code:
+(add-to-list 'load-path "~/.emacs.d/custom")
+(setq-default flycheck-emacs-lisp-load-path load-path)
 
-;;
-;;  Initialize Emacs with use-package
-;;
-(require 'package)
-(setq package-enable-at-startup nil)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
-(setq package-archive-priorities
-      '(("melpa" . 10)
-	("gnu" . 5)))
+(require 'ivy-package)
+(require 'ivy-ide)
+(require 'ivy-project)
+(require 'ivy-debug)
+(require 'ivy-git)
+(require 'ivy-javascript)
+(require 'ivy-php)
+(require 'ivy-ruby)
+(require 'ivy-configuration)
+(require 'ivy-graphql)
+(require 'ivy-text)
 
-(package-initialize)
-
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
-(require 'use-package)
-(use-package diminish :ensure t)
-(use-package bind-key :ensure t)
-
-;;
-;;  IDE styles
-;;
-(use-package ivy-style
-  :load-path "custom/")
-
-;;
-;;  Basic IDE configuration
-;;
-(use-package ivy-ide
-  :load-path "custom/")
-
-;;
-;;  Project configuration
-;;
-(use-package ivy-project
-  :load-path "custom/")
-
-;;
-;;  Debugging
-;;
-(use-package ivy-debug
-  :load-path "custom/")
-
-;;
-;; Git management
-;;
-(use-package ivy-git
-  :load-path "custom/")
-
-;;
-;;  JavaScript
-;;
-(use-package ivy-javascript
-  :load-path "custom/")
-
-;;
-;;  PHP
-;;
-(use-package ivy-php
-  :load-path "custom/")
-
-;;
-;;  Ruby
-;;
-(use-package ivy-ruby
-  :load-path "custom/")
-
-;;
-;;  Config Files
-;;
-(use-package ivy-configuration
-  :load-path "custom/")
-
-;;
-;;  GraphQL
-;;
-(use-package ivy-graphql
-  :load-path "custom/")
-
-;;
-;;  Text Files
-;;
-(use-package ivy-text
-  :load-path "custom/")
+(defun mode-check (mode-name)
+  "Check to eval MODE-NAME if a cons."
+  (if (consp mode-name)
+      (capitalize (car mode-name))
+      ;;(mapconcat (lambda (x) (if (stringp x) (format 'x) (format x))) mode-name " ")
+    (capitalize mode-name)))
 
 (provide '.emacs)
 ;;; .emacs ends here
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -150,7 +85,7 @@
             (format-time-string " %H:%M ")
             'face 'font-lock-builtin-face))))
  '(package-selected-packages
-   '(dap-php dap-node dap-firefox hl-todo magit-todos typescript-mode web-mode tramp-term tramp-theme docker-tramp company-tern js2-mode flycheck company use-package))
+   '(hl-todo magit-todos typescript-mode web-mode tramp-term tramp-theme docker-tramp company-tern js2-mode flycheck company use-package))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

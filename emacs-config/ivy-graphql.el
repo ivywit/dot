@@ -6,9 +6,8 @@
 
 ;; graphql schema support
 
-(use-package graphql-mode
-  :mode "\\.graphql\\'"
-  :ensure t)
+(require 'graphql-mode)
+(add-to-list 'auto-mode-alist '("\\.graphql\\'" . graphql-mode))
 
 (provide 'ivy-graphql)
 ;;; ivy-graphql.el ends here

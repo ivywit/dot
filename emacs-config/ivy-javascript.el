@@ -21,6 +21,10 @@
     (flycheck-add-mode 'javascript-eslint 'js-mode)
     (flycheck-add-next-checker 'lsp-ui 'javascript-eslint))
 
+  (with-eval-after-load 'dap
+    (require 'dap-firefox)
+    (require 'dap-node))
+  
   (add-hook 'after-save-hook 'eslint-fix) ;; ESLint fix
   (indium-interaction-mode) ;; JS interpreter and debugger
   (add-node-modules-path) ;; add node modules to path

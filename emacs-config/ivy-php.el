@@ -7,6 +7,7 @@
 ;; (require 'company-phpactor)
 (require 'php-mode)
 (require 'web-mode)
+;; (require 'dap-php)
 
 (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
   ;; :hook ((php-mode . (lambda () (set (make-local-variable 'company-backends)

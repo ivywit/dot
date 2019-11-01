@@ -4,14 +4,7 @@
 ;;
 ;;; Code:
 
-;;
-;; DAP debugging
-;;
 (require 'dap-mode)
-(require 'dap-firefox)
-(require 'dap-node)
-;; (require 'dap-php)
-
 (dap-mode 1)
 (dap-ui-mode 1)
 (dap-tooltip-mode 1)

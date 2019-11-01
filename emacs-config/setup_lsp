@@ -1,0 +1,5 @@
+#! /bin/zsh
+npm i -g typescript typescript-language-server bash-language-server yaml-language-server dockerfile-language-server-nodejs vscode-css-languageserver-bin vscode-html-languageserver-bin intelephense
+gem install solargraph
+pip install ‘python-language-server[all]’
+brew install llvm

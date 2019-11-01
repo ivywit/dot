@@ -12,9 +12,9 @@
 (require 'paren)
 (require 'tramp)
 (require 'hideshow)
-(when (memq window-system '(mac ns x))
-  (require 'exec-path-from-shell)
-  (exec-path-from-shell-initialize))
+;; (when (memq window-system '(mac ns x))
+;;   (require 'exec-path-from-shell)
+;;   (exec-path-from-shell-initialize))
 
 (defvar ns-use-proxy-icon)
 (defvar mouse-sel-mode)

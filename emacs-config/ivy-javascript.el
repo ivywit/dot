@@ -15,15 +15,20 @@
   (setq js-basic-indent 2)
   (setq js-indent-level 2)
   (lsp)
+
+  (with-eval-after-load 'flycheck
+    (add-to-list 'flycheck-disabled-checkers 'javascript-jshint)
+    (flycheck-add-mode 'javascript-eslint 'js-mode)
+    (flycheck-add-next-checker 'lsp-ui 'javascript-eslint))
+
   (add-hook 'after-save-hook 'eslint-fix) ;; ESLint fix
   (indium-interaction-mode) ;; JS interpreter and debugger
   (add-node-modules-path) ;; add node modules to path
-  (with-eval-after-load 'ivy
-    (projectile-register-project-type 'javascript '("package.json")
-                                      :compile "npm install"
-                                      :test "npm test"
-                                      :run "npm start"
-                                      :test-suffix ".spec")))
+  (projectile-register-project-type 'javascript '("package.json")
+                                    :compile "npm install"
+                                    :test "npm test"
+                                    :run "npm start"
+                                    :test-suffix ".spec"))
 
 (add-to-list 'auto-mode-alist '("\\.[jt]sx?\\'" . js-mode))
 (add-hook 'js-mode-hook 'setup-js)

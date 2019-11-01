@@ -12,6 +12,8 @@
 (require 'flycheck)
 (require 'lsp-mode)
 (require 'projectile)
+(with-eval-after-load 'flycheck (require 'lsp-ui))
+(with-eval-after-load 'company (require 'company-lsp))
 
 (defvar projectile-mode-map)
 (defvar projectile-completion-system)
@@ -24,16 +26,10 @@
 (prescient-persist-mode 1)
 (ivy-prescient-mode 1)
 (company-prescient-mode 1)
-
 (global-flycheck-mode)
-(add-to-list 'flycheck-disabled-checkers 'javascript-jshint)
-(flycheck-add-mode 'javascript-eslint 'js-mode)
 
 (setq lsp-prefer-flymake nil)
 (add-hook 'c-mode-common-hook 'lsp)
-(with-eval-after-load 'lsp
-  (with-eval-after-load 'flycheck (require 'lsp-ui))
-  (with-eval-after-load 'company (require 'company-lsp)))
 
 (with-eval-after-load 'ivy
   (projectile-mode +1)

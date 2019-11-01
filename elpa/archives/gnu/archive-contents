@@ -131,7 +131,7 @@
 	   ("John Wiegley" . "jwiegley@gmail.com"))
 	  (:keywords "async"))])
  (auctex .
-	 [(12 1 2)
+	 [(12 2 0)
 	  ((emacs
 	    (24 1))
 	   (cl-lib

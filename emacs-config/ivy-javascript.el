@@ -34,7 +34,9 @@
                                     :run "npm start"
                                     :test-suffix ".spec"))
 
-(add-to-list 'auto-mode-alist '("\\.[jt]sx?\\'" . js-mode))
+;; (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js-mode))
+(add-to-list 'auto-mode-alist '("\\.[jt]sx?\\'" . web-mode))
+(add-hook 'web-mode-hook 'setup-js)
 (add-hook 'js-mode-hook 'setup-js)
 
 (provide 'ivy-javascript)

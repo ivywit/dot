@@ -84,7 +84,7 @@
             (format-time-string " %H:%M ")
             'face 'font-lock-builtin-face))))
  '(package-selected-packages
-   '(swiper auto-compile hl-todo magit-todos typescript-mode web-mode tramp-term tramp-theme docker-tramp company-tern js2-mode flycheck company use-package))
+   '(add-node-modules-path indium eslint-fix swiper auto-compile hl-todo magit-todos typescript-mode web-mode tramp-term tramp-theme docker-tramp company-tern js2-mode flycheck company use-package))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

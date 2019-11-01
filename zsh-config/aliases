@@ -15,7 +15,6 @@ alias sequelize="./node_modules/.bin/sequelize"
 alias irssi='TERM=screen-256color irssi'
 alias pir='TERM=screen-256color proxychains4 irssi'
 alias emacsx="/Applications/Emacs.app/Contents/MacOS/Emacs"
-alias emacs="emacsclient -a /usr/local/bin/emacs -c"
 
 # Zulily aliases - Updated on Thu Jun 21 2018 3:04pm
 alias xdebugloopback="sudo ifconfig lo0 alias 10.254.254.254"

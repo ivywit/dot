@@ -22,7 +22,7 @@
 (add-to-list 'auto-mode-alist '("\\.html\\.php\\'" . web-mode))
 (setq web-mode-script-padding 2)
 (setq web-mode-style-padding 2)
-(setq web-mode-markup-indent-offset 4)
+(setq web-mode-markup-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
 (setq web-mode-code-indent-offset 2)
 (add-hook 'php-mode-hook 'lsp)

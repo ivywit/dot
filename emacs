@@ -5,7 +5,6 @@
 ;;; Code:
 (add-to-list 'load-path "~/.emacs.d/custom")
 (setq-default flycheck-emacs-lisp-load-path load-path)
-
 (require 'ivy-package)
 (require 'ivy-ide)
 (require 'ivy-project)
@@ -85,7 +84,7 @@
             (format-time-string " %H:%M ")
             'face 'font-lock-builtin-face))))
  '(package-selected-packages
-   '(hl-todo magit-todos typescript-mode web-mode tramp-term tramp-theme docker-tramp company-tern js2-mode flycheck company use-package))
+   '(auto-compile hl-todo magit-todos typescript-mode web-mode tramp-term tramp-theme docker-tramp company-tern js2-mode flycheck company use-package))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

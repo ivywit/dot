@@ -1,1 +1,1 @@
-{"repo":"git@github.com:ivywit/dot.git","files":{"dotdex":"~/.dotdex.json","emacs":"~/.emacs","zsh":"~/.zshrc","emacs-config":"~/.emacs.d/custom","elpa":"~/.emacs.d/elpa","zsh-config":"~/.zsh","eslint":"~/.eslintrc"}}
+{"repo":"git@github.com:ivywit/dot.git","files":{"dotdex":"~/.dotdex.json","emacs":"~/.emacs.d/init.el","zsh":"~/.zshrc","emacs-config":"~/.emacs.d/custom","elpa":"~/.emacs.d/elpa","zsh-config":"~/.zsh","eslint":"~/.eslintrc"}}

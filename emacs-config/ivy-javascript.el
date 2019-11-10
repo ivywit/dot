@@ -5,15 +5,17 @@
 ;;; Code:
 (defun setup-js ()
   "Setup Javascript packages."
+  ;; (require 'indium)
   (require 'eslint-fix)
-  (require 'indium)
   (require 'add-node-modules-path)
 
   ;; Setup basic js stuff.
   (defvar js-basic-indent)
   (defvar js-indent-level)
+  (defvar js-switch-indent-offset)
   (setq js-basic-indent 2)
   (setq js-indent-level 2)
+  (setq js-switch-indent-offset 2)
   (lsp)
 
   (with-eval-after-load 'flycheck
@@ -25,17 +27,15 @@
     (require 'dap-firefox)
     (require 'dap-node))
   
-  (add-hook 'after-save-hook 'eslint-fix) ;; ESLint fix
-  (indium-interaction-mode) ;; JS interpreter and debugger
   (add-node-modules-path) ;; add node modules to path
   (projectile-register-project-type 'javascript '("package.json")
                                     :compile "npm install"
                                     :test "npm test"
                                     :run "npm start"
-                                    :test-suffix ".spec"))
+                                    :test-suffix ".spec")
+  (add-hook 'after-save-hook 'eslint-fix)) ;; ESLint fix
 
-;; (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js-mode))
-(add-to-list 'auto-mode-alist '("\\.[jt]sx?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js-mode))
 (add-hook 'web-mode-hook 'setup-js)
 (add-hook 'js-mode-hook 'setup-js)
 

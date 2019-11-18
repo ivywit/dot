@@ -32,28 +32,6 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey '\e[A' history-beginning-search-backward-end
 bindkey '\e[B' history-beginning-search-forward-end
 
-nvmLazy() {
-    nvmpath=$1
-    nvmsources=(${(s: :)2})
-    nvmpossibleCommands=(${(s: :)3})
-    for command in $nvmpossibleCommands; do        
-        $command() {
-            local thisCommand="$0"
-            echo 'loading...'
-            if [[ -d $nvmpath ]]; then
-                unfunction ${nvmpossibleCommands}
-                for sourcePath in $nvmsources; do
-                    source ${sourcePath}
-                done
-                ${thisCommand} "$@"
-            else
-                echo "$thisCommand is not installed" >&2
-                return 1
-            fi
-        }
-    done
-}
-
 ##
 #  ALIASES
 ##
@@ -102,21 +80,9 @@ function spectrum_bls() {
 }
 
 ##
-#  Node Version Manager
-##
-NVM_DIR="$HOME/.nvm" # NVM
-NVM_SOURCES="$NVM_DIR/bash_completion $NVM_DIR/nvm.sh"
-NVM_CMDS="nvm node npm"
-source "$HOME/.zsh/default_nvm"
-nvmLazy $NVM_DIR $NVM_SOURCES $NVM_CMDS
-
-##
 #  Ruby Version Manager
 ##
 RVM_DIR=$HOME/.rvm # RVM
-# RVM_CMDS="rvm ruby irb rails"
-#RVM_COMPLETION="$RVM_DIR/scripts/zsh/Completion/_rvm"
-#rvmLazy $RVM_DIR $RVM_COMPLETION $RVM_CMDS
 source "$RVM_DIR/scripts/rvm"
 
 ##
@@ -151,7 +117,9 @@ eval "$(fasd --init auto)"
 ##
 #  Default Path
 ##
-export PATH="$RVM_DIR/bin:$DEFAULT_NVM:$PATH"
+export PATH="$RVM_DIR/bin:$PATH"
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# fnm
+eval "$(fnm env --multi)"

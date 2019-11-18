@@ -4,7 +4,9 @@
 ;;
 ;;; Code:
 
+;(require 'json-mode)
 (require 'yaml-mode)
+;(add-to-list 'auto-mode-alist '("\\.json\\'" . json-mode))
 (add-to-list 'auto-mode-alist '("\\.ym*l\\'" . ymal-mode))
 
 (provide 'ivy-configuration)

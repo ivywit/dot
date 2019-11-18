@@ -12,6 +12,8 @@
 (require 'paren)
 (require 'tramp)
 (require 'hideshow)
+(require 'xclip)
+
 ;; (when (memq window-system '(mac ns x))
 ;;   (require 'exec-path-from-shell)
 ;;   (exec-path-from-shell-initialize))
@@ -21,6 +23,11 @@
 (defvar linum-format)
 (defvar linum-disabled-modes-list)
 (defvar docker-tramp-use-names)
+
+;;
+;;  Copy and Paste
+;;
+(xclip-mode 1)
 
 ;;
 ;;  Window Management

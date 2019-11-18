@@ -12,9 +12,11 @@
   ;; Setup basic js stuff.
   (defvar js-basic-indent)
   (defvar js-indent-level)
+  (defvar typescript-indent-level)
   (defvar js-switch-indent-offset)
   (setq js-basic-indent 2)
   (setq js-indent-level 2)
+  (setq typescript-indent-level 2)
   (setq js-switch-indent-offset 2)
   (lsp)
 
@@ -35,8 +37,9 @@
                                     :test-suffix ".spec")
   (add-hook 'after-save-hook 'eslint-fix)) ;; ESLint fix
 
+(add-to-list 'auto-mode-alist '("\\.tsx?\\'" . typescript-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js-mode))
-(add-hook 'web-mode-hook 'setup-js)
+(add-hook 'typescript-mode-hook 'setup-js)
 (add-hook 'js-mode-hook 'setup-js)
 
 (provide 'ivy-javascript)

@@ -85,7 +85,13 @@
             'face 'font-lock-builtin-face))))
  '(package-selected-packages
    '(xclip json-mode add-node-modules-path indium eslint-fix swiper auto-compile hl-todo magit-todos typescript-mode tramp-term tramp-theme docker-tramp company-tern js2-mode flycheck company use-package))
- '(show-paren-mode t))
+ '(show-paren-mode t)
+ '(web-mode-code-indent-offset 2)
+ '(web-mode-css-indent-offset 2)
+ '(web-mode-markup-indent-offset 2)
+ '(web-mode-script-padding 2)
+ '(web-mode-style-padding 2)
+ '(web-mode-tests-directory "~/zulily/packages/tests/"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -137,5 +143,7 @@
  '(rjsx-tag-bracket-face ((t (:foreground "brightblack"))))
  '(show-paren-match ((t (:background "gray40" :foreground "white" :weight bold))))
  '(vertical-border ((t (:background "color-233" :foreground "color-234"))))
+ '(web-mode-html-attr-name-face ((t (:foreground "dodger blue"))))
  '(web-mode-html-tag-bracket-face ((t (:foreground " Snow4"))))
+ '(web-mode-html-tag-face ((t (:foreground "sky blue"))))
  '(window-divider ((t (:foreground "black")))))

@@ -1,0 +1,2 @@
+;;; Generated package description from /Users/ivy/.emacs.d/elpa/gitlab-ci-mode-flycheck-20190323.1829/gitlab-ci-mode-flycheck.el  -*- no-byte-compile: t -*-
+(define-package "gitlab-ci-mode-flycheck" "20190323.1829" "Flycheck support for ‘gitlab-ci-mode’" '((emacs "25") (flycheck "31") (gitlab-ci-mode "1")) :commit "eba81cfb7224fd1fa4e4da90d11729cc7ea12f72" :keywords '("tools" "vc" "convenience") :authors '(("Joe Wreschnig")) :maintainer '("Joe Wreschnig") :url "https://gitlab.com/joewreschnig/gitlab-ci-mode-flycheck/")

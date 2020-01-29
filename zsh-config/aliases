@@ -19,7 +19,6 @@ alias emacsx="/Applications/Emacs.app/Contents/MacOS/Emacs"
 # Zulily aliases - Updated on Thu Jun 21 2018 3:04pm
 alias xdebugloopback="sudo ifconfig lo0 alias 10.254.254.254"
 alias zu:sync="xdebugloopback && cd ~/zulily/docker-local && sh scripts/sync_repos.sh && cd ~/zulily"
-alias zu:uup="export FT_CONTAINER_NAME=$HOST && cd ~/zulily/docker-local && docker-compose up"
-alias zu:up="export FT_CONTAINER_NAME=$HOST && cd ~/zulily/docker-local && docker-compose -f docker-compose.yml -f optional.docker-compose.yml up"
+alias zu:up="export FT_CONTAINER_NAME=$HOST && cd ~/zulily/docker-local && docker-compose up"
 alias zu:logs="tail -f ~/zulily/docker-local/php-fpm/var/log/php/php_error.log"
 alias zu:restart="cd ~/zulily/docker-local && docker-compose -f docker-compose.yml -f optional.docker-compose.yml restart"

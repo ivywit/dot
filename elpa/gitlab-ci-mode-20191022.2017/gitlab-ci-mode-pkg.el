@@ -1,0 +1,2 @@
+;;; Generated package description from /Users/ivy/.emacs.d/elpa/gitlab-ci-mode-20191022.2017/gitlab-ci-mode.el  -*- no-byte-compile: t -*-
+(define-package "gitlab-ci-mode" "20191022.2017" "Mode for editing GitLab CI files" '((emacs "25.1") (yaml-mode "0.0.12")) :commit "c861dc5fa17d380d5c3aca99dc3bbec5eee623bc" :keywords '("tools" "vc") :authors '(("Joe Wreschnig")) :maintainer '("Joe Wreschnig") :url "https://gitlab.com/joewreschnig/gitlab-ci-mode/")

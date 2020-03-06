@@ -6,7 +6,7 @@
 (require 'mouse)
 (require 'rotate)
 (require 'hl-line)
-(require 'hl-todo)
+(require 'comment-tags)
 (require 'highlight-symbol)
 (require 'linum)
 (require 'paren)

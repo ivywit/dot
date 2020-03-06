@@ -3,42 +3,36 @@
 ;; this is a configuration file
 ;;
 ;;; Code:
+(require 'lsp-mode)
+(require 'prescient)
+(require 'company)
+(require 'company-prescient)
 (require 'ivy)
+(require 'ivy-prescient)
 (require 'swiper)
 (require 'ag)
-(require 'company)
-(require 'prescient)
-(require 'ivy-prescient)
-(require 'company-prescient)
 (require 'flycheck)
-(require 'lsp-mode)
-(require 'projectile)
+
 (with-eval-after-load 'flycheck (require 'lsp-ui))
 (with-eval-after-load 'company (require 'company-lsp))
+(with-eval-after-load 'ivy (require 'lsp-ivy))
 
-(defvar projectile-mode-map)
-(defvar projectile-completion-system)
-(defvar projectile-register-project-type)
-(defvar lsp-prefer-flymake)
-
-(setq company-minimum-prefix-length 2)
-(ivy-mode 1)
-(setq ivy-use-virtual-buffers t)
-(setq enable-recursive-minibuffers t)
-(global-set-key "\C-s" 'swiper)
-(global-company-mode)
 (prescient-persist-mode 1)
-(ivy-prescient-mode 1)
+
+(global-company-mode)
+(setq company-minimum-prefix-length 1
+      company-idle-delay 0.0) ;; default is 0.2
 (company-prescient-mode 1)
+
 (global-flycheck-mode)
 
-(setq lsp-prefer-flymake nil)
 (add-hook 'c-mode-common-hook 'lsp)
 
-(with-eval-after-load 'ivy
-  (projectile-mode +1)
-  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-  (setq projectile-completion-system 'ivy))
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(ivy-prescient-mode 1)
+(setq enable-recursive-minibuffers t)
+(global-set-key "\C-s" 'swiper)
 
 (provide 'ivy-project)
 ;;; ivy-project.el ends here

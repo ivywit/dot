@@ -43,7 +43,7 @@ source $HOME/.zsh/aliases
 export MANPATH="/usr/local/man:$MANPATH" # manual path
 export SBINPATH="/usr/local/sbin" # sbin tools
 export PATH="$SBINPATH:$PATH"
-
+export CPATH="$CPATH:/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include"
 ##
 #  Color functions
 ##

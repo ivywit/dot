@@ -29,18 +29,18 @@
     (add-to-list 'flycheck-disabled-checkers 'javascript-jshint)
     (flycheck-add-mode 'javascript-eslint 'js-mode)
     (flycheck-add-mode 'javascript-eslint 'web-mode)
-    (flycheck-add-next-checker 'lsp-ui 'javascript-eslint))
+    (flycheck-add-next-checker 'lsp 'javascript-eslint))
 
   (with-eval-after-load 'dap
     (require 'dap-firefox)
     (require 'dap-node))
   
   (add-node-modules-path) ;; add node modules to path
-  (projectile-register-project-type 'javascript '("package.json")
-                                    :compile "npm install"
-                                    :test "npm test"
-                                    :run "npm start"
-                                    :test-suffix ".spec")
+  ;; (projectile-register-project-type 'javascript '("package.json")
+  ;;                                   :compile "npm install"
+  ;;                                   :test "npm test"
+  ;;                                   :run "npm start"
+  ;;                                   :test-suffix ".spec")
   (add-hook 'after-save-hook 'eslint-fix)) ;; ESLint fix
 
 (setq web-mode-content-types-alist

@@ -16,6 +16,7 @@
 (require 'ivy-configuration)
 (require 'ivy-graphql)
 (require 'ivy-text)
+(require 'ivy-css)
 
 (defun mode-check (mode-name)
   "Check to eval MODE-NAME if a cons."

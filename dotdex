@@ -1,1 +1,1 @@
-{"repo":"git@github.com:ivywit/dot.git","files":{"dotdex":"~/.dotdex.json","emacs":"~/.emacs.d/init.el","zsh":"~/.zshrc","emacs-config":"~/.emacs.d/custom","eslint":"~/.eslintrc","iterm":"~/ivy.json","tmux":"~/.tmux.conf","zsh-prompt":"~/.zsh/prompt"}}
+{"repo":"git@github.com:ivywit/dot.git","files":{"dotdex":"~/.dotdex.json","emacs":"~/.emacs.d/init.el","zsh":"~/.zshrc","emacs-config":"~/.emacs.d/custom","eslint":"~/.eslintrc","iterm":"~/ivy.json","tmux":"~/.tmux.conf","zsh-prompt":"~/.zsh/prompt","tmux-scripts":"~/.tmux"}}

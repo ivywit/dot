@@ -8,6 +8,15 @@
 export TERM=xterm-256color
 
 ##
+#  TMUX
+##
+if which tmux 2>&1 >/dev/null; then
+    if [ $TERM != "screen" ] && [ -z $TMUX ]; then
+        tmux attach -t chaos || tmux new -s chaos
+    fi
+fi
+
+##
 #  PROMPT
 ##
 source $HOME/.zsh/prompt
@@ -121,9 +130,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # fnm
 eval "$(fnm env --multi)"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
+export CLOUDSDK_PYTHON=python3.8
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/ivy/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ivy/google-cloud-sdk/path.zsh.inc'; fi
 

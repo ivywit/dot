@@ -6,17 +6,12 @@
 
 (defun setup-ruby ()
   "Setup ruby packages."
-  (require 'projectile-rails)
   (require 'inf-ruby)
-  (require 'robe)
-  (require 'rvm)
-  (defadvice inf-ruby-console-auto
-      (before activate-rvm-for-robe activate)
-    "."
-    (rvm-activate-corresponding-ruby))
+  
   (lsp)
-  (robe-mode)
-  (projectile-rails-mode))
+  (with-eval-after-load 'flycheck
+    (flycheck-add-mode 'ruby-rubocop 'ruby-mode)
+    (flycheck-add-next-checker 'lsp 'ruby-rubocop)))
 
 (add-hook 'ruby-mode-hook 'setup-ruby)
 

@@ -34,6 +34,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(company-minimum-prefix-length 2)
+ '(font-lock-global-modes '(not speedbar-mode))
  '(fringe-mode 0 nil (fringe))
  '(global-company-mode t)
  '(global-flycheck-mode t)
@@ -85,7 +86,7 @@
             (format-time-string " %H:%M ")
             'face 'font-lock-builtin-face))))
  '(package-selected-packages
-   '(lsp-ivy gitlab ivy-gitlab gitlab-ci-mode-flycheck gitlab-ci-mode xclip json-mode add-node-modules-path indium eslint-fix swiper auto-compile hl-todo magit-todos typescript-mode tramp-term tramp-theme docker-tramp company-tern js2-mode flycheck company use-package))
+   '(circe circe-notifications lsp-ivy gitlab ivy-gitlab gitlab-ci-mode-flycheck gitlab-ci-mode xclip json-mode add-node-modules-path indium eslint-fix swiper auto-compile hl-todo magit-todos typescript-mode tramp-term tramp-theme docker-tramp company-tern js2-mode flycheck company use-package))
  '(show-paren-mode t)
  '(web-mode-code-indent-offset 2)
  '(web-mode-css-indent-offset 2)
@@ -121,7 +122,7 @@
  '(font-lock-doc-face ((t (:inherit font-lock-comment-face))))
  '(font-lock-function-name-face ((t (:foreground "goldenrod1"))))
  '(font-lock-keyword-face ((t (:foreground "MediumPurple1"))))
- '(font-lock-string-face ((t (:foreground "OliveDrab3"))))
+ '(font-lock-string-face ((t (:foreground "DarkOliveGreen3"))))
  '(font-lock-type-face ((t (:foreground "SteelBlue1"))))
  '(font-lock-variable-name-face ((t (:foreground "dodgerblue1"))))
  '(highlight ((t (:background "gray10"))))

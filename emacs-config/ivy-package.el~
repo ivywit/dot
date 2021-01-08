@@ -25,10 +25,7 @@
                      prescient
                      lsp-mode
                      lsp-ivy
-                     lsp-ui
                      company-lsp
-                     company-prescient
-                     dap-mode
                      typescript-mode
                      magit
                      magit-todos
@@ -44,9 +41,7 @@
                      yaml-mode
                      highlight-symbol
                      robe
-		     comment-tags
-                     rotate
-                     php-mode))
+                     rotate))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)

@@ -86,7 +86,7 @@
             (format-time-string " %H:%M ")
             'face 'font-lock-builtin-face))))
  '(package-selected-packages
-   '(circe circe-notifications lsp-ivy gitlab ivy-gitlab gitlab-ci-mode-flycheck gitlab-ci-mode xclip json-mode add-node-modules-path indium eslint-fix swiper auto-compile hl-todo magit-todos typescript-mode tramp-term tramp-theme docker-tramp company-tern js2-mode flycheck company use-package))
+   '(counsel circe circe-notifications lsp-ivy gitlab ivy-gitlab gitlab-ci-mode-flycheck gitlab-ci-mode xclip json-mode add-node-modules-path indium eslint-fix swiper auto-compile hl-todo magit-todos typescript-mode tramp-term tramp-theme docker-tramp company-tern js2-mode flycheck company use-package))
  '(show-paren-mode t)
  '(web-mode-code-indent-offset 2)
  '(web-mode-css-indent-offset 2)

@@ -12,7 +12,7 @@ export TERM=xterm-256color
 ##
 if which tmux 2>&1 >/dev/null; then
     if [ $TERM != "screen" ] && [ -z $TMUX ]; then
-        tmux attach -t chaos || tmux new -s chaos
+        tmux attach -t ds || tmux
     fi
 fi
 
@@ -89,10 +89,14 @@ function spectrum_bls() {
 }
 
 ##
-#  Ruby Version Manager
+#  Ruby
 ##
-RVM_DIR=$HOME/.rvm # RVM
-source "$RVM_DIR/scripts/rvm"
+export RBENV_ROOT="${HOME}/.rbenv"
+
+if [ -d "${RBENV_ROOT}" ]; then
+  export PATH="${RBENV_ROOT}/bin:${PATH}"
+  eval "$(rbenv init -)"
+fi
 
 ##
 #  Google Cloud
@@ -123,7 +127,7 @@ eval "$(fasd --init auto)"
 ##
 #  Default Path
 ##
-export PATH="$RVM_DIR/bin:$PATH"
+#export PATH="$RVM_DIR/bin:$PATH"
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -136,3 +140,10 @@ if [ -f '/Users/ivy/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ivy/google-
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/ivy/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ivy/google-cloud-sdk/completion.zsh.inc'; fi
+
+##
+#  DOCSEND
+##
+
+export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+export PATH="/Users/ivy/docsend/elaine/bin:$PATH"

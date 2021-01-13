@@ -1,3 +1,5 @@
+if-shell 'test -e "$HOME/.tmux-boot.conf"' 'source-file "$HOME/.tmux-boot.conf"'
+
 set -g mouse on
 
 # set 256 color

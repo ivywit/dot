@@ -46,6 +46,7 @@
                      robe
 		     comment-tags
                      rotate
+                     rust-mode
                      php-mode))
 
 ; activate all the packages (in particular autoloads)

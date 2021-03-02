@@ -33,6 +33,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(auto-compile-use-mode-line 'mode-line-modified)
  '(company-minimum-prefix-length 2)
  '(font-lock-global-modes '(not speedbar-mode))
  '(fringe-mode 0 nil (fringe))
@@ -74,17 +75,13 @@
                        `((space :align-to
                                 (-
                                  (+ right right-fringe right-margin)
-                                 ,(+ 10
+                                 ,(+ 1
                                      (string-width
                                       (mode-check mode-name))))))))
          `(:eval
            (propertize
             (mode-check mode-name)
-            'face 'font-lock-string-face))
-         '(:eval
-           (propertize
-            (format-time-string " %H:%M ")
-            'face 'font-lock-builtin-face))))
+            'face 'font-lock-string-face))))
  '(package-selected-packages
    '(counsel circe circe-notifications lsp-ivy gitlab ivy-gitlab gitlab-ci-mode-flycheck gitlab-ci-mode xclip json-mode add-node-modules-path indium eslint-fix swiper auto-compile hl-todo magit-todos typescript-mode tramp-term tramp-theme docker-tramp company-tern js2-mode flycheck company use-package))
  '(show-paren-mode t)
@@ -99,7 +96,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 100 :width normal :foundry "nil" :family "Hack"))))
+ '(default ((t (:inherit nil :extend nil :stipple nil :background "black" :foreground "color-247" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "default"))))
  '(company-echo-common ((t (:foreground "mediumpurple"))))
  '(company-preview ((t (:background "royalblue4" :foreground "wheat"))))
  '(company-preview-common ((t (:inherit company-preview :foreground "mediumpurple1"))))
@@ -113,17 +110,17 @@
  '(custom-button-mouse ((t (:background "light sky blue" :foreground "black" :box (:line-width 2 :style released-button)))))
  '(custom-button-pressed ((t (:background "steelblue" :foreground "black" :box (:line-width 2 :style pressed-button)))))
  '(custom-variable-tag ((t (:foreground "RoyalBlue1" :weight bold))))
- '(error ((t (:foreground "tomato1" :weight bold))))
+ '(error ((t (:foreground "color-163" :weight bold))))
  '(flycheck-error-list-info ((t (:inherit coral))))
  '(flycheck-info ((t (:inherit warning :underline t))))
- '(font-lock-builtin-face ((t (:foreground "RoyalBlue1"))))
+ '(font-lock-builtin-face ((t (:foreground "RoyalBlue"))))
  '(font-lock-comment-face ((t (:foreground "grey40"))))
- '(font-lock-constant-face ((t (:foreground "goldenrod1"))))
+ '(font-lock-constant-face ((t (:foreground "color-178"))))
  '(font-lock-doc-face ((t (:inherit font-lock-comment-face))))
  '(font-lock-function-name-face ((t (:foreground "goldenrod1"))))
  '(font-lock-keyword-face ((t (:foreground "MediumPurple1"))))
  '(font-lock-string-face ((t (:foreground "DarkOliveGreen3"))))
- '(font-lock-type-face ((t (:foreground "SteelBlue1"))))
+ '(font-lock-type-face ((t (:foreground "color-141"))))
  '(font-lock-variable-name-face ((t (:foreground "dodgerblue1"))))
  '(highlight ((t (:background "gray10"))))
  '(highlight-symbol-face ((t (:background "grey40"))))
@@ -137,8 +134,8 @@
  '(menu ((t (:background "color-233" :foreground "dodger blue"))))
  '(minibuffer-prompt ((t (:foreground "dodger blue"))))
  '(minimap-active-region-background ((t (:background "grey20"))))
- '(mode-line ((t (:background "gray10" :foreground "dodger blue" :box (:line-width 2 :color "grey10")))))
- '(mode-line-inactive ((t (:inherit mode-line :background "grey30" :foreground "SlateBlue3" :box (:line-width 2 :color "grey30") :weight light))))
+ '(mode-line ((t (:background "color-233" :foreground "color-63" :box (:line-width 2 :color "grey10")))))
+ '(mode-line-inactive ((t (:inherit mode-line :background "color-233" :foreground "color-239" :box (:line-width 2 :color "grey30") :weight light))))
  '(region ((t (:background "mediumpurple4"))))
  '(rjsx-attr ((t (:inherit font-lock-preprocessor-face))))
  '(rjsx-tag ((t (:inherit font-lock-type-face))))

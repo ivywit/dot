@@ -1,0 +1,6 @@
+export MANPATH=/usr/local/man:$MANPATH # manual path
+export SBINPATH=/usr/local/sbin # sbin tools
+export CPATH=$CPATH:/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include
+export PATH=$RBENV_ROOT/bin:$SBINPATH:$PATH
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '$HOME/google-cloud-sdk/path.zsh.inc' ]; then . '$HOME/google-cloud-sdk/path.zsh.inc'; fi

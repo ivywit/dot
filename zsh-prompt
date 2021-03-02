@@ -17,9 +17,10 @@ case "$system" in
         ;;
 esac
 
-PRIMARY_F=141 #32
-SECONDARY_F=106
-
+PURPLE=063 #141 #32
+PINK=141 #106
+ORANGE=178
+GREEN=149
 CURRENT_FG="NONE"
 
 # SEGMENT
@@ -46,17 +47,17 @@ prompt_end() {
 
 # USER PROMPT
 prompt_user() {
-    segment $PRIMARY_F ' %n '
+    segment $PURPLE ' %n '
 }
 
 # HOST PROMPT
 prompt_host() {
-    segment $SECONDARY_F ' %m '
+    segment $PINK ' %m '
 }
 
 # DIRECTORY
 prompt_dir() {
-    segment 250 ' %2~ '
+    segment $GREEN ' %2~ '
 }
 
 # Checks if working tree is dirty
@@ -82,12 +83,12 @@ prompt_git() {
   local ref dirty mode repo_path
   repo_path=$(git rev-parse --git-dir 2>/dev/null)
   if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
-      color=$SECONDARY_F
+      color=$GREEN
       dirty=$(parse_git_dirty)
       ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git show-ref --head -s --abbrev |head -n1 2> /dev/null)"
 
     if [[ -n $dirty ]]; then
-        color=214
+        color=$ORANGE
     fi
     
     if [[ -e '${repo_path}/BISECT_LOG' ]]; then
@@ -131,26 +132,26 @@ prompt_status() {
 # Typing Prompt
 prompt_type() {
     CURRENT_FG='NONE'
-    segment $PRIMARY_F ' %D{%H:%M} '
+    segment $ORANGE ' %D{%H:%M} '
 }
 
 # Left Prompt
 build_left() {
     echo -n '%B'
-    segment $PRIMARY_F '['
+    segment $PURPLE '['
     prompt_user
-    segment $SECONDARY_F '@'
+    segment $PINK '@'
     prompt_host
-    segment 250 ':'
+    segment $GREEN ':'
     prompt_dir
-    segment $PRIMARY_F ']'
+    segment $PURPLE ']'
     prompt_git
     prompt_status
     prompt_end
     echo -n '\n'
-    segment $PRIMARY_F '['
+    segment $PURPLE '['
     prompt_type
-    segment $PRIMARY_F '>'
+    segment $PURPLE '>'
     prompt_end
     echo -n "%b"
 }

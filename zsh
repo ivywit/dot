@@ -108,3 +108,10 @@ if [ -f '/Users/ivy/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ivy/google-
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/ivy/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ivy/google-cloud-sdk/completion.zsh.inc'; fi
+
+##
+#  CUSTOM SCRIPTS
+##
+if [ -f "$HOME/.zsh/custom.zsh" ]; then
+    source "$HOME/.zsh/custom.zsh"
+fi

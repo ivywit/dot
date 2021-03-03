@@ -10,7 +10,3 @@ case "$system" in
         #export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
         ;;
 esac
-
-alias irssi='TERM=screen-256color irssi'
-alias pir='TERM=screen-256color proxychains4 irssi'
-alias emacsx="/Applications/Emacs.app/Contents/MacOS/Emacs"

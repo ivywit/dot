@@ -44,10 +44,7 @@
 
 (setq ns-use-proxy-icon nil)
 (setq frame-title-format nil)
-(global-set-key (kbd "C-c <up>") 'windmove-up)
-(global-set-key (kbd "C-c <down>") 'windmove-down)
-(global-set-key (kbd "C-c <right>") 'windmove-right)
-(global-set-key (kbd "C-c <left>") 'windmove-left)
+(windmove-default-keybindings)
 
 ;;
 ;;  Backups and Autosave
@@ -74,10 +71,10 @@
 ;; Mouse Support
 ;;
 (xterm-mouse-mode t)
-(global-set-key [mouse-4] '(lambda ()
+(global-set-key [mouse-4] #'(lambda ()
                              (interactive)
                              (scroll-down 1)))
-(global-set-key [mouse-5] '(lambda ()
+(global-set-key [mouse-5] #'(lambda ()
                              (interactive)
                              (scroll-up 1)))
 

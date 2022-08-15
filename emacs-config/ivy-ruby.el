@@ -7,7 +7,8 @@
 (defun setup-ruby ()
   "Setup ruby packages."
   (require 'inf-ruby)
-  
+  (defvar ruby-insert-encoding-magic-comment)
+  (setq ruby-insert-encoding-magic-comment nil)
   (lsp)
   (with-eval-after-load 'flycheck
     (flycheck-add-mode 'ruby-rubocop 'ruby-mode)

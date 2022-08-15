@@ -5,11 +5,6 @@
 ##
 
 ##
-#  CONSTANTS
-##
-source $HOME/.zsh/constants.zsh
-
-##
 #  TMUX
 ##
 if which tmux 2>&1 >/dev/null; then
@@ -17,6 +12,11 @@ if which tmux 2>&1 >/dev/null; then
         tmux attach -t chaos || tmux
     fi
 fi
+
+##
+#  CONSTANTS
+##
+source $HOME/.zsh/constants.zsh
 
 ##
 #  PROMPT
@@ -96,7 +96,7 @@ eval "$(fasd --init auto)"
 ##
 #  FNM
 ##
-eval "$(fnm env --multi)"
+eval "$(fnm env)"
 
 ##
 #  CARGO

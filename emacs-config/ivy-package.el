@@ -26,7 +26,6 @@
                      lsp-mode
                      lsp-ivy
                      lsp-ui
-                     company-lsp
                      company-prescient
                      dap-mode
                      typescript-mode
@@ -34,12 +33,13 @@
                      magit-todos
                      xclip
                      ag
+                     rg
+                     org
                      emacsql
                      graphql-mode
                      inf-ruby
                      ivy-prescient
                      tramp
-                     treemacs
                      web-mode
                      yaml-mode
                      highlight-symbol

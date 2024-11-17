@@ -1,0 +1,73 @@
+#! /bin/sh
+
+CMD=$1
+LABEL=$2
+PATH=$3
+PREFIX='files.'
+
+if [[ -z $LABEL || $LABEL = "repo" ]]; then
+    PREFIX=''
+fi
+
+if [ -z $LABEL ] && [[ $CMD = "add" || $CMD = "drop" ]] ; then
+    echo 'Please provide a label and path for a file to add';
+    exit 2
+fi
+
+if [ -z $PATH ] && [[ $CMD = "add" ]]; then
+    echo 'Please provide a path to a file to add';
+    exit 2
+fi
+
+jq() {
+    /opt/homebrew/bin/jq $1 $2
+}
+
+list() {
+    jq ".$PREFIX$LABEL" ./dotdex
+}
+
+
+setValue() {
+    value=$(jq -c '.$PREFIX$LABEL = "$PATH"' ./dotdex)
+    echo $value > ./dotdex
+}
+
+drop() {
+    value=$(jq -c 'del(.$PREFIX$LABEL)' ./dotdex)
+    echo $value > ./dotdex
+}
+
+push() {
+    echo 'not implemented'
+}
+
+pull() {
+    echo 'not implemented'
+}
+
+setup() {
+    ./_lib/setup
+}
+
+
+case $CMD in
+    "set")
+        setValue
+    ;;
+    "drop")
+        drop
+    ;;
+    "list")
+        list
+    ;;
+    "push")
+        push
+    ;;
+    "pull")
+        pull
+    ;;
+    "setup")
+        setup
+    ;;
+esac

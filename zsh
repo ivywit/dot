@@ -41,6 +41,7 @@ source $HOME/.zsh/functions.zsh
 ##
 #  AUTOCOMPLETION
 ##
+source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 # The next line enables shell command completion for gcloud.
 if [ -f '$HOME/google-cloud-sdk/completion.zsh.inc' ]; then
@@ -50,22 +51,22 @@ fi
 ##
 #  COMPINIT
 ##
-autoload -Uz compinit
-# only check once per day
-if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
-    compinit
-else
-    compinit -C
-fi
+# autoload -Uz compinit
+# # only check once per day
+# if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
+#     compinit
+# else
+#     compinit -C
+# fi
 
 ##
 #  HISTORY
 ##
-autoload -U history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey '\e[A' history-beginning-search-backward-end
-bindkey '\e[B' history-beginning-search-forward-end
+# autoload -U history-search-end
+# zle -N history-beginning-search-backward-end history-search-end
+# zle -N history-beginning-search-forward-end history-search-end
+# bindkey '\e[A' history-beginning-search-backward-end
+# bindkey '\e[B' history-beginning-search-forward-end
 
 ##
 #  Ruby
@@ -77,7 +78,7 @@ function rbenv() {
 ##
 #  Syntax highlighting
 ##
-export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[command]='fg=141'
 ZSH_HIGHLIGHT_STYLES[function]='fg=178'
@@ -86,7 +87,7 @@ ZSH_HIGHLIGHT_STYLES[alias]='fg=141'
 ZSH_HIGHLIGHT_STYLES[path]='fg=149'
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=149'
 ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=242'
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ##
 #  FASD
@@ -96,15 +97,7 @@ eval "$(fasd --init auto)"
 ##
 #  FNM
 ##
-eval "$(fnm env)"
-
-##
-#  CARGO
-##
-source "$HOME/.cargo/env"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/ivy/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ivy/google-cloud-sdk/path.zsh.inc'; fi
+eval "$(fnm env --use-on-cd)"
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/ivy/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ivy/google-cloud-sdk/completion.zsh.inc'; fi

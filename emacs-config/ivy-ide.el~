@@ -30,21 +30,7 @@
 ;;
 ;;  Copilot mode
 ;;
-
-; modify company-mode behaviors
-;; (with-eval-after-load 'company
-;;   ; disable inline previews
-;;   (delq 'company-preview-if-just-one-frontend company-frontends)
-;;   ; enable tab completion
-;;   (define-key company-mode-map (kbd "<tab>") 'my-tab)
-;;   (define-key company-mode-map (kbd "TAB") 'my-tab)
-;;   (define-key company-active-map (kbd "<tab>") 'my-tab)
-;;   (define-key company-active-map (kbd "TAB") 'my-tab))
-(copilot-mode 1)
-
-(global-set-key (kbd "C-TAB") 'copilot-accept-completion)
-;;(define-key global-map (kbd "<tab>") #'copilot-tab)
-
+(copilot-mode 1
 ;;
 ;;  Window Management
 ;;

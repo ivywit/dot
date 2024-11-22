@@ -55,8 +55,8 @@
 
 (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js-mode))
 (add-to-list 'auto-mode-alist '("\\.tsx?\\'" . typescript-mode))
-(add-hook 'typescript-mode-hook 'setup "typescript")
-(add-hook 'js-mode-hook 'setup "javascript")
+(add-hook 'typescript-mode-hook (lambda () (setup "typescript")))
+(add-hook 'js-mode-hook (lambda () (setup "javascript")))
 ;;(add-to-list 'auto-mode-alist '("\\.[jt]s[x]?\\'" . web-mode))
 ;;(add-hook 'web-mode-hook 'setup-js)
 

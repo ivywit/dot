@@ -84,7 +84,7 @@
             'face 'font-lock-string-face))))
  '(org-agenda-files '("~/Dropbox/org/20220519.org") t)
  '(package-selected-packages
-   '(jsonrpc editorconfig rustic rg org yasnippet counsel circe circe-notifications lsp-ivy gitlab ivy-gitlab gitlab-ci-mode-flycheck gitlab-ci-mode xclip json-mode add-node-modules-path indium eslint-fix swiper auto-compile hl-todo magit-todos typescript-mode tramp-term tramp-theme docker-tramp flycheck company))
+   '(lsp-mode lsp-ui jsonrpc editorconfig rustic rg org yasnippet counsel circe circe-notifications lsp-ivy gitlab ivy-gitlab gitlab-ci-mode-flycheck gitlab-ci-mode xclip json-mode add-node-modules-path indium eslint-fix swiper auto-compile hl-todo magit-todos typescript-mode tramp-term tramp-theme docker-tramp flycheck company))
  '(show-paren-mode t)
  '(warning-suppress-types '((lsp-mode) (lsp-mode) (lsp-mode)))
  '(web-mode-code-indent-offset 2)

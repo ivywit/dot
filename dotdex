@@ -1,1 +1,14 @@
-{"repo":"git@github.com:ivywit/dot.git","files":{"dotdex":"~/.dotdex.json","emacs":"~/.emacs.d/init.el","zsh":"~/.zshrc","emacs-config":"~/.emacs.d/custom","eslint":"~/.eslintrc","iterm":"~/ivy.json","tmux":"~/.tmux.conf","zsh-prompt":"~/.zsh/prompt.zsh","tmux-scripts":"~/.tmux","zsh-paths":"~/.zsh/paths.zsh","zsh-functions":"~/.zsh/functions.zsh","zsh-constants":"~/.zsh/constants.zsh","zsh-aliases":"~/.zsh/aliases.zsh"}}
+{
+  "repo": "git@github-iw:ivywit/dot.git",
+  "files": {
+    "dotdex": "/Users/ivy/.dotdex.json",
+    "emacs": "/Users/ivy/.emacs.d/init.el",
+    "zsh": "/Users/ivy/.zshrc",
+    "emacs-config": "/Users/ivy/.emacs.d/custom",
+    "eslint": "/Users/ivy/.eslintrc",
+    "iterm": "/Users/ivy/ivy.json",
+    "tmux": "/Users/ivy/.tmux.conf",
+    "zsh-config": "/Users/ivy/.zsh",
+    "tmux-config": "/Users/ivy/.tmux"
+  }
+}

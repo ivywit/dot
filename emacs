@@ -43,6 +43,7 @@
  '(global-linum-mode t)
  '(global-visual-line-mode t)
  '(linum-format 'linum-format-func)
+ '(magit-todos-insert-after '(bottom) nil nil "Changed by setter of obsolete option `magit-todos-insert-at'")
  '(minimap-width-fraction 0.05)
  '(minimap-window-location 'right)
  '(mode-line-format
@@ -80,10 +81,11 @@
            (propertize
             (mode-check mode-name)
             'face 'font-lock-string-face))))
- '(org-agenda-files '("~/Dropbox/org/20220519.org"))
+ '(org-agenda-files '("~/Dropbox/org/20220519.org") t)
  '(package-selected-packages
-   '(rg org yasnippet counsel circe circe-notifications lsp-ivy gitlab ivy-gitlab gitlab-ci-mode-flycheck gitlab-ci-mode xclip json-mode add-node-modules-path indium eslint-fix swiper auto-compile hl-todo magit-todos typescript-mode tramp-term tramp-theme docker-tramp flycheck company))
+   '(pos-tip lsp-mode lsp-ui jsonrpc editorconfig rustic rg org yasnippet counsel circe circe-notifications lsp-ivy gitlab ivy-gitlab gitlab-ci-mode-flycheck gitlab-ci-mode xclip json-mode add-node-modules-path indium eslint-fix swiper auto-compile hl-todo magit-todos tramp-term tramp-theme docker-tramp flycheck company))
  '(show-paren-mode t)
+ '(warning-suppress-types '((lsp-mode) (lsp-mode) (lsp-mode)))
  '(web-mode-code-indent-offset 2)
  '(web-mode-css-indent-offset 2)
  '(web-mode-markup-indent-offset 2)
@@ -122,6 +124,8 @@
  '(font-lock-variable-name-face ((t (:foreground "DodgerBlue1"))))
  '(highlight ((t (:background "black"))))
  '(highlight-symbol-face ((t (:background "grey40"))))
+ '(line-number ((t (:foreground "gray25"))))
+ '(line-number-current-line ((t (:inherit line-number :background "black"))))
  '(link ((t (:foreground "MediumPurple3" :underline t))))
  '(linum ((t (:background "gray3" :foreground "gray20" :box nil :underline nil))))
  '(menu ((t (:background "gray8" :foreground "DodgerBlue"))))

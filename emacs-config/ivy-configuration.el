@@ -7,7 +7,7 @@
 ;(require 'json-mode)
 (require 'yaml-mode)
 ;(add-to-list 'auto-mode-alist '("\\.json\\'" . json-mode))
-(add-to-list 'auto-mode-alist '("\\.ym*l\\'" . ymal-mode))
+(add-to-list 'auto-mode-alist '("\\.ym*l\\'" . yaml-mode))
 
 (provide 'ivy-configuration)
 ;;; ivy-configuration.el ends here

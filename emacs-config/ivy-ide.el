@@ -8,7 +8,6 @@
 (require 'hl-line)
 (require 'comment-tags)
 (require 'highlight-symbol)
-(require 'linum)
 (require 'paren)
 (require 'tramp)
 (require 'hideshow)
@@ -20,14 +19,30 @@
 
 (defvar ns-use-proxy-icon)
 (defvar mouse-sel-mode)
-(defvar linum-format)
-(defvar linum-disabled-modes-list)
 (defvar docker-tramp-use-names)
 
 ;;
 ;;  Copy and Paste
 ;;
 (xclip-mode 1)
+
+;;
+;;  Copilot mode
+;;
+
+; modify company-mode behaviors
+;; (with-eval-after-load 'company
+;;   ; disable inline previews
+;;   (delq 'company-preview-if-just-one-frontend company-frontends)
+;;   ; enable tab completion
+;;   (define-key company-mode-map (kbd "<tab>") 'my-tab)
+;;   (define-key company-mode-map (kbd "TAB") 'my-tab)
+;;   (define-key company-active-map (kbd "<tab>") 'my-tab)
+;;   (define-key company-active-map (kbd "TAB") 'my-tab))
+;;(copilot-mode 1)
+
+(global-set-key (kbd "C-TAB") 'copilot-accept-completion)
+;;(define-key global-map (kbd "<tab>") #'copilot-tab)
 
 ;;
 ;;  Window Management
@@ -64,7 +79,7 @@
 ;;  Default Tabs
 ;;
 (setq-default indent-tabs-mode nil)
-(setq tab-width 4)
+(setq tab-width 2)
 (defvaralias 'c-basic-offset 'tab-width)
 (defvaralias 'cperl-indent-level 'tab-width)
 ;;
@@ -81,6 +96,10 @@
 (setq mouse-sel-mode t)
 (setq scroll-step 1) ; smooth scrolling
 
+(unless window-system
+  (defun x-hide-tip ()
+    (interactive)
+    nil))
 
 ;;
 ;;  Line Numbers and Highlight
@@ -88,27 +107,13 @@
 (global-hl-todo-mode)
 (add-hook 'prog-mode-hook 'highlight-symbol-mode)
 (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
-
-
-(add-hook 'prog-mode-hook 'linum-mode)
-(defun linum-format-func (line)
-  "Format LINE numbers."
-  (let ((w (length (number-to-string (count-lines (point-min) (point-max))))))
-    (propertize (format (format "  %%%dd  " w) line) 'face 'linum)))
-(defun linum-on ()
-  "Enable linum mode."
-  (unless (or (minibufferp) (member major-mode linum-disabled-modes-list))
-    (linum-mode 1)))
-;; format line numbers
-(setq linum-format 'linum-format-func)
-;; disable line numbers in certain modes
-(setq linum-disabled-modes-list '(term-mode shell-mode eshell-mode wl-summary-mode compilation-mode custom-mode))
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
 ;;
 ;;  Match Parens
 ;;
 (show-paren-mode 1)
-(set-face-background 'show-paren-match "color-237")
+(set-face-background 'show-paren-match "DodgerBlue1")
 (set-face-foreground 'show-paren-match "#def")
 (set-face-attribute 'show-paren-match nil :weight 'extra-bold)
 

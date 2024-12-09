@@ -15,39 +15,41 @@
 ; list the packages you want
 (setq package-list '(add-node-modules-path
                      auto-compile
+                     comment-tags
                      company
+                     company-prescient
+                     counsel
+                     dap-mode
+                     emacsql
                      eslint-fix
                      flycheck
+                     graphql-mode
+                     highlight-symbol
                      hl-todo
-                     json-mode
+                     inf-ruby
                      ivy
-                     swiper
-                     prescient
-                     lsp-mode
+                     ivy-prescient
+;;                     json-mode
                      lsp-ivy
+                     lsp-mode
                      lsp-ui
-                     company-prescient
-                     dap-mode
-                     typescript-mode
                      magit
                      magit-todos
-                     xclip
-                     ag
-                     rg
                      org
-                     emacsql
-                     graphql-mode
-                     inf-ruby
-                     ivy-prescient
-                     tramp
-                     web-mode
-                     yaml-mode
-                     highlight-symbol
+                     php-mode
+                     prescient
+                     projectile
+                     rg
                      robe
-		     comment-tags
                      rotate
-                     rust-mode
-                     php-mode))
+                     rustic
+                     swiper
+                     tramp
+                     typescript-mode
+                     web-mode
+                     xclip
+                     yaml-mode
+                     yasnippet))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)

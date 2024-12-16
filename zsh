@@ -111,3 +111,6 @@ if [ -f '/Users/ivy/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ivy/g
 if [ -f "$HOME/.zsh/custom.zsh" ]; then
     source "$HOME/.zsh/custom.zsh"
 fi
+
+# Added by Windsurf
+export PATH="/Users/ivy/.codeium/windsurf/bin:$PATH"

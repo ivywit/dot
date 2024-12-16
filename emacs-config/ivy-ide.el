@@ -41,7 +41,30 @@
 ;;   (define-key company-active-map (kbd "TAB") 'my-tab))
 ;;(copilot-mode 1)
 
-(global-set-key (kbd "C-TAB") 'copilot-accept-completion)
+;;
+;; Codeium
+;;
+(require 'codeium)
+;;(add-to-list 'completion-at-point-functions #'codeium-completion-at-point)
+(add-hook 'prog-mode-hook
+          (lambda ()
+            (add-hook 'completion-at-point-functions #'codeium-completion-at-point nil t)))
+
+(setq use-dialog-box nil) ;; do not use popup boxes
+;; ;; setup codeium modeline
+;; (setq codeium-mode-line-enable
+;;       (lambda (api) (not (memq api '(CancelRequest Heartbeat AcceptCompletion)))))
+;; (add-to-list 'mode-line-format '(:eval (car-safe codeium-mode-line)) t)
+
+;; (setq codeium-api-enabled
+;;       (lambda (api)
+;;         (memq api '(GetCompletions Heartbeat CancelRequest GetAuthToken RegisterUser auth-redirect AcceptCompletion))))
+;; ;; limit the string sent to codeium for better performance
+;; (defun my-codeium/document/text ()
+;;   (buffer-substring-no-properties (max (- (point) 3000) (point-min)) (min (+ (point) 1000) (point-max))))
+    
+
+;;(global-set-key (kbd "C-TAB") 'copilot-accept-completion)
 ;;(define-key global-map (kbd "<tab>") #'copilot-tab)
 
 ;;

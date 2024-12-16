@@ -4,6 +4,7 @@
 ;;
 ;;; Code:
 (add-to-list 'load-path "~/.emacs.d/custom/")
+(add-to-list 'load-path "~/.emacs.d/codeium.el")
 (setq-default flycheck-emacs-lisp-load-path load-path)
 (require 'ivy-package)
 (require 'ivy-ide)
@@ -13,6 +14,7 @@
 (require 'ivy-javascript)
 (require 'ivy-php)
 (require 'ivy-ruby)
+(require 'ivy-python)
 (require 'ivy-configuration)
 (require 'ivy-graphql)
 (require 'ivy-text)
@@ -34,6 +36,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(auto-compile-use-mode-line 'mode-line-modified)
+ '(codeium/metadata/api_key "88874712-c19d-43bf-a6be-641fae7f93ef")
  '(company-minimum-prefix-length 2)
  '(font-lock-global-modes '(not speedbar-mode))
  '(fringe-mode 0 nil (fringe))

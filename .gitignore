@@ -1,0 +1,29 @@
+# Dotdex v2 .gitignore
+
+# Backup files
+*.backup
+*.bak
+*.tmp
+*~
+
+# Package files
+*.pkg
+*.dmg
+*.app
+
+# Old config files
+dotdex
+~/.dotdex.json
+
+# User home directory artifacts
+~/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Temporary files
+*.swp
+*.swo
+*~

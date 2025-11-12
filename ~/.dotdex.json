@@ -1,0 +1,14 @@
+{
+  "repo": "git@github-iw:ivywit/dot.git",
+  "files": {
+    "dotdex": "/Users/ivy/.dotdex.json",
+    "emacs": "/Users/ivy/.emacs.d/init.el",
+    "zsh": "/Users/ivy/.zshrc",
+    "emacs-config": "/Users/ivy/.emacs.d/custom",
+    "eslint": "/Users/ivy/.eslintrc",
+    "iterm": "/Users/ivy/ivy.json",
+    "tmux": "/Users/ivy/.tmux.conf",
+    "zsh-config": "/Users/ivy/.zsh",
+    "tmux-config": "/Users/ivy/.tmux"
+  }
+}

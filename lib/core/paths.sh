@@ -28,6 +28,25 @@ normalize_path() {
     fi
 }
 
+# abs_path_to_tilde - Convert absolute path to tilde path for portability
+# input: "convert absolute path to tilde path"
+# Args: $1 - absolute path (e.g., /Users/ivy/.zshrc)
+# Returns: 0 on success
+# Outputs: Tilde path (e.g., ~/.zshrc) or original path if not in HOME
+abs_path_to_tilde() {
+    local path="$1"
+
+    # If path starts with HOME, replace with ~
+    if [[ "$path" == "$HOME/"* ]]; then
+        echo "~${path#$HOME}"
+    elif [[ "$path" == "$HOME" ]]; then
+        echo "~"
+    else
+        # Path is not in HOME, return as-is
+        echo "$path"
+    fi
+}
+
 # validate_path_exists - Check if path exists
 # input: "validate that path exists"
 # Args: $1 - path to validate

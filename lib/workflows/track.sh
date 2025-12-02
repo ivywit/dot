@@ -149,9 +149,13 @@ list_tracked_files_workflow() {
         tracked_at=$(echo "$file" | jq -r '.tracked_at')
         last_synced=$(echo "$file" | jq -r '.last_synced // "never"')
 
+        # Normalize path (expands ~ if present)
+        local normalized_path
+        normalized_path=$(normalize_path "$path")
+
         # Check if file still exists
         local exists="✓"
-        if [[ ! -e "$path" ]]; then
+        if [[ ! -e "$normalized_path" ]]; then
             exists="✗ (missing)"
         fi
 
@@ -189,8 +193,12 @@ verify_tracked_files_workflow() {
         repo_path=$(echo "$file" | jq -r '.repo_path')
         type=$(echo "$file" | jq -r '.type')
 
+        # Normalize path (expands ~ if present)
+        local normalized_path
+        normalized_path=$(normalize_path "$path")
+
         # Check if path exists
-        if [[ ! -e "$path" ]]; then
+        if [[ ! -e "$normalized_path" ]]; then
             echo "✗ $path"
             echo "  Issue: File does not exist"
             has_issues=1
@@ -199,7 +207,7 @@ verify_tracked_files_workflow() {
 
         # Check if type matches
         local actual_type
-        actual_type=$(get_path_type "$path")
+        actual_type=$(get_path_type "$normalized_path")
         if [[ "$actual_type" != "$type" ]]; then
             echo "✗ $path"
             echo "  Issue: Type mismatch (config: $type, actual: $actual_type)"
@@ -208,7 +216,7 @@ verify_tracked_files_workflow() {
         fi
 
         # Check if still in home directory
-        if ! validate_path_in_home "$path"; then
+        if ! validate_path_in_home "$normalized_path"; then
             echo "✗ $path"
             echo "  Issue: Path is not under home directory"
             has_issues=1
@@ -216,7 +224,7 @@ verify_tracked_files_workflow() {
         fi
 
         # Check if symlink
-        if ! validate_not_symlink "$path"; then
+        if ! validate_not_symlink "$normalized_path"; then
             echo "✗ $path"
             echo "  Issue: Path has become a symbolic link"
             has_issues=1

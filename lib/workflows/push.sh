@@ -72,6 +72,9 @@ push_workflow() {
         repo_path=$(echo "$file" | jq -r '.repo_path')
         type=$(echo "$file" | jq -r '.type')
 
+        # Normalize path (expands ~ if present)
+        path=$(normalize_path "$path")
+
         local dest="$dotfiles_path/$repo_path"
 
         # Check if source exists
@@ -161,6 +164,28 @@ push_workflow() {
         return 1
     fi
 
+    # Step 10.1: Verify push succeeded by checking remote state
+    echo "Verifying push..."
+    local local_head remote_head
+    local_head=$(git rev-parse HEAD 2>/dev/null) || {
+        echo "Error: Failed to get local HEAD" >&2
+        return 1
+    }
+
+    remote_head=$(git ls-remote "$remote" "$branch" 2>/dev/null | awk '{print $1}') || {
+        echo "Error: Failed to get remote HEAD" >&2
+        return 1
+    }
+
+    if [[ "$local_head" != "$remote_head" ]]; then
+        echo "Error: Push reported success but remote was not updated" >&2
+        echo "Local HEAD:  $local_head" >&2
+        echo "Remote HEAD: $remote_head" >&2
+        echo "Your changes are committed locally but not pushed" >&2
+        echo "This may indicate a GitHub push protection or permission issue" >&2
+        return 1
+    fi
+
     echo "✓ Pushed to $remote/$branch"
 
     # Step 11: Update sync times in config
@@ -173,7 +198,11 @@ push_workflow() {
         local path
         path=$(echo "$file" | jq -r '.path')
 
-        if [[ -e "$path" ]]; then
+        # Normalize path (expands ~ if present)
+        local normalized_path
+        normalized_path=$(normalize_path "$path")
+
+        if [[ -e "$normalized_path" ]]; then
             new_config=$(echo "$new_config" | jq \
                 --arg path "$path" \
                 --arg synced_at "$(date -u +"%Y-%m-%dT%H:%M:%SZ")" \

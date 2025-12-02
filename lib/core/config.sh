@@ -107,15 +107,20 @@ add_tracked_file() {
     local config
     config=$(read_config) || return 1
 
-    # Check if already tracked
-    if echo "$config" | jq -e --arg path "$abs_path" '.files[] | select(.path == $path)' >/dev/null 2>&1; then
+    # Convert absolute path to tilde path for portability
+    local tilde_path
+    tilde_path=$(abs_path_to_tilde "$abs_path")
+
+    # Check if already tracked (check both formats for backwards compatibility)
+    if echo "$config" | jq -e --arg path "$abs_path" --arg tilde "$tilde_path" \
+        '.files[] | select(.path == $path or .path == $tilde)' >/dev/null 2>&1; then
         echo "Error: File already tracked: $abs_path" >&2
         return 1
     fi
 
-    # Add new file entry
+    # Add new file entry with tilde path
     echo "$config" | jq \
-        --arg path "$abs_path" \
+        --arg path "$tilde_path" \
         --arg repo_path "$repo_path" \
         --arg type "$type" \
         --arg tracked_at "$timestamp" \
@@ -138,10 +143,17 @@ remove_tracked_file() {
     local config
     config=$(read_config) || return 1
 
-    # Try to match by either path or repo_path
+    # Normalize path to tilde format for matching
+    local normalized_path tilde_path
+    normalized_path=$(normalize_path "$path" 2>/dev/null || echo "$path")
+    tilde_path=$(abs_path_to_tilde "$normalized_path")
+
+    # Try to match by path (both formats), repo_path, or exact input
     echo "$config" | jq \
         --arg path "$path" \
-        '.files = [.files[] | select(.path != $path and .repo_path != $path)]'
+        --arg normalized "$normalized_path" \
+        --arg tilde "$tilde_path" \
+        '.files = [.files[] | select(.path != $path and .path != $normalized and .path != $tilde and .repo_path != $path)]'
 }
 
 # update_sync_time - Update last_synced timestamp for a file
@@ -184,9 +196,15 @@ get_tracked_file() {
     local config
     config=$(read_config) || return 1
 
+    # Normalize input to tilde path for comparison
+    local normalized_path
+    normalized_path=$(normalize_path "$path")
+    local tilde_path
+    tilde_path=$(abs_path_to_tilde "$normalized_path")
+
     local result
-    result=$(echo "$config" | jq -r --arg path "$path" \
-        '.files[] | select(.path == $path or .repo_path == $path)')
+    result=$(echo "$config" | jq -r --arg path "$path" --arg tilde "$tilde_path" \
+        '.files[] | select(.path == $path or .path == $tilde or .repo_path == $path)')
 
     if [[ -z "$result" ]]; then
         return 1

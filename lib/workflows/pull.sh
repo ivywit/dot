@@ -197,6 +197,9 @@ pull_workflow() {
         repo_path=$(echo "$file" | jq -r '.repo_path')
         type=$(echo "$file" | jq -r '.type')
 
+        # Normalize path (expands ~ if present)
+        path=$(normalize_path "$path")
+
         local source="$dotfiles_path/$repo_path"
 
         # Check if source exists in repo
@@ -361,6 +364,9 @@ get_pull_status() {
         local path repo_path
         path=$(echo "$file" | jq -r '.path')
         repo_path=$(echo "$file" | jq -r '.repo_path')
+
+        # Normalize path (expands ~ if present)
+        path=$(normalize_path "$path")
 
         local source="$dotfiles_path/$repo_path"
 

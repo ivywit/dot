@@ -79,6 +79,42 @@ write_config() {
     }
 }
 
+# bootstrap_config - Copy config from repo to home directory
+# input: "bootstrap dotdex config from repository"
+# Args: $1 - repo root path
+# Returns: 0 on success, 1 on failure
+bootstrap_config() {
+    local repo_root="$1"
+    local repo_config="$repo_root/dotfiles/.dotdex.json"
+
+    # Check if config already exists
+    if [[ -f "$DOTDEX_CONFIG" ]]; then
+        echo "Error: Configuration already exists at $DOTDEX_CONFIG" >&2
+        echo "Remove it first if you want to bootstrap again" >&2
+        return 1
+    fi
+
+    # Check if repo config exists
+    if [[ ! -f "$repo_config" ]]; then
+        echo "Error: No .dotdex.json found in repository at $repo_config" >&2
+        return 1
+    fi
+
+    # Validate repo config is valid JSON
+    if ! jq empty "$repo_config" 2>/dev/null; then
+        echo "Error: Repository config is not valid JSON: $repo_config" >&2
+        return 1
+    fi
+
+    # Copy to home directory
+    cp "$repo_config" "$DOTDEX_CONFIG" || {
+        echo "Error: Failed to copy config to $DOTDEX_CONFIG" >&2
+        return 1
+    }
+
+    return 0
+}
+
 # get_config_value - Extract a value from config
 # input: "extract value from config using jq query"
 # Args: $1 - jq query (e.g., ".repository.url")

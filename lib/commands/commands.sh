@@ -18,12 +18,47 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 
 # cmd_init - Initialize a new dotdex configuration
 # input: "initialize new dotdex repository and config"
-# Args: $1 - repository URL (optional), $2 - branch (optional)
+# Args: $1 - repository URL (optional) or --from-repo flag, $2 - branch (optional)
 # Returns: 0 on success, 1 on failure
 cmd_init() {
-    local repo_url="${1:-}"
-    local branch="${2:-main}"
+    local from_repo=false
+    local repo_url=""
+    local branch="main"
 
+    # Parse arguments
+    if [[ "$1" == "--from-repo" ]]; then
+        from_repo=true
+        shift
+    else
+        repo_url="${1:-}"
+        branch="${2:-main}"
+    fi
+
+    # Bootstrap from repository if --from-repo flag is set
+    if [[ "$from_repo" == true ]]; then
+        echo "Bootstrapping configuration from repository..."
+
+        if ! bootstrap_config "$REPO_ROOT"; then
+            return 1
+        fi
+
+        # Read bootstrapped config to show details
+        local config
+        config=$(read_config) || return 1
+        repo_url=$(echo "$config" | jq -r '.repository.url')
+        branch=$(echo "$config" | jq -r '.repository.branch')
+
+        echo "✓ Bootstrapped dotdex configuration from repository"
+        echo "  Repository: $repo_url"
+        echo "  Branch: $branch"
+        echo "  Config: $DOTDEX_CONFIG"
+        echo
+        echo "Next steps:"
+        echo "  Run 'dotdex pull' to sync tracked files to your home directory"
+        return 0
+    fi
+
+    # Original init logic for creating new config
     # Check if config already exists
     if [[ -f "$DOTDEX_CONFIG" ]]; then
         echo "Error: Configuration already exists at $DOTDEX_CONFIG" >&2
@@ -39,7 +74,7 @@ cmd_init() {
 
         if [[ -z "$repo_url" ]]; then
             echo "Error: Repository URL required" >&2
-            echo "Usage: dotdex init <repository-url> [branch]" >&2
+            echo "Usage: dotdex init [--from-repo] | <repository-url> [branch]" >&2
             return 1
         fi
     fi
@@ -211,6 +246,24 @@ cmd_pull() {
         echo
     fi
 
+    # Check if config exists
+    if [[ ! -f "$DOTDEX_CONFIG" ]]; then
+        # Check if repo has config to bootstrap from
+        if [[ -f "$REPO_ROOT/dotfiles/.dotdex.json" ]]; then
+            echo "Error: No configuration found at $DOTDEX_CONFIG" >&2
+            echo >&2
+            echo "It looks like you're on a new machine. Bootstrap your config first:" >&2
+            echo "  dotdex init --from-repo" >&2
+            echo >&2
+            echo "Then run 'dotdex pull' to sync your dotfiles." >&2
+            return 1
+        else
+            echo "Error: No configuration found at $DOTDEX_CONFIG" >&2
+            echo "Initialize dotdex first: dotdex init <repository-url>" >&2
+            return 1
+        fi
+    fi
+
     pull_workflow "$REPO_ROOT" "$dry_run"
 }
 
@@ -261,6 +314,7 @@ USAGE:
 
 COMMANDS:
     init [url] [branch]     Initialize dotdex configuration
+    init --from-repo        Bootstrap config from cloned repository
     track <path>            Track a new file or directory
     untrack <path>          Stop tracking a file or directory
     list                    List all tracked files
@@ -273,8 +327,12 @@ COMMANDS:
     help                    Show this help message
 
 EXAMPLES:
-    # Initialize
+    # Initialize new dotfiles repo
     dotdex init git@github.com:user/dotfiles.git
+
+    # Bootstrap on new machine (after git clone)
+    dotdex init --from-repo
+    dotdex pull
 
     # Track files
     dotdex track ~/.zshrc

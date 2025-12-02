@@ -90,3 +90,8 @@ export PATH="/Users/ivy/.codeium/windsurf/bin:$PATH"
 if [ -f "$HOME/.local/bin/env" ]; then
     . "$HOME/.local/bin/env"
 fi
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/ivy/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
